@@ -54,6 +54,47 @@
     background-color: #1e7e34;
   }
 }
+.dropdown {
+  position: relative;
+  display: inline-block;
+  margin-bottom: 10px;
+}
+
+.dropbtn {
+  background-color: #1e7e34;
+  color: white;
+  padding: 10px 20px;
+  font-size: 16px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.dropdown-content {
+  display: none;
+  position: absolute;
+  background-color: white;
+  min-width: 220px;
+  box-shadow: 0px 8px 16px rgba(0,0,0,0.2);
+  z-index: 1;
+  border-radius: 5px;
+}
+
+.dropdown-content a {
+  color: black;
+  padding: 10px 15px;
+  text-decoration: none;
+  display: block;
+  border-bottom: 1px solid #eee;
+}
+
+.dropdown-content a:hover {
+  background-color: #f1f1f1;
+}
+
+.dropdown:hover .dropdown-content {
+  display: block;
+}
 
 </style>
 
@@ -61,8 +102,13 @@
 
 </head>
 <body>
-    <a href="tel:+380952281220" class="call-button">📞 Позвонить</a>
-    <a href="tel:+380970073990" class="call-button">📞 Позвонить 2</a>
+   <div class="dropdown">
+  <button class="dropbtn">📞 Позвонить</button>
+  <div class="dropdown-content">
+    <a href="tel:+380952281220">📱 +38 (095) 228 12 20</a>
+    <a href="tel:+380970073990">📱 +38 (097) 007 39 90</a>
+  </div>
+</div>
 
 
 
