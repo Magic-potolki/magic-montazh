@@ -211,9 +211,11 @@
     const date = new Date().toLocaleDateString();
 
     const formData = new FormData();
-    formData.append("entry.1234567890", name);    // заменим
-    formData.append("entry.9876543210", review);  // заменим
-    formData.append("entry.1111111111", date);    // заменим
+    formData.append("entry.2118747260", name);
+formData.append("entry.108154205", review);
+formData.append("entry.2033785990", date);
+
+fetch("https://docs.google.com/forms/d/e/1FAIpQLSfnLtjX-k98WxkWvh4eFVwTAgDyrfdzTbvxaA5gB0WjtwF1bg/formResponse", {
 
     fetch("https://docs.google.com/forms/d/e/ВАШ_ID_ФОРМЫ/formResponse", {
       method: "POST",
