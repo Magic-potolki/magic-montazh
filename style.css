@@ -110,6 +110,12 @@ nav a {
 .toggle-btn:hover {
   background-color: #555;
 }
+@media (max-width: 768px) {
+  .toggle-btn {
+    font-size: 18px;
+    padding: 12px 20px;
+  }
+}
 
 
 
