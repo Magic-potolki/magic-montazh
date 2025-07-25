@@ -162,11 +162,41 @@
   <p>Имя: Дмитрий</p>
   
 </section>
-<section class="reviews-toggle">
-  <button onclick="toggleReviews()" class="toggle-btn">Показать отзывы клиентов</button>
+
   ...
 </section>
 <script>...</script>
+<section class="reviews-toggle">
+  <button onclick="toggleReviews()" class="toggle-btn">Показать отзывы клиентов</button>
+
+  <section id="reviews" style="display: none;">
+    <div class="review-list">
+      <div class="review">
+        <p class="review-text">Отличный сервис! Потолок установили быстро и качественно.</p>
+        <span class="review-author">Анна</span>
+      </div>
+      <div class="review">
+        <p class="review-text">Всё понравилось! Буду советовать друзьям.</p>
+        <span class="review-author">Игорь</span>
+      </div>
+      <div class="review">
+        <p class="review-text">Монтаж на высшем уровне. Спасибо за работу!</p>
+        <span class="review-author">Светлана</span>
+      </div>
+    </div>
+  </section>
+</section>
+
+<script>
+  function toggleReviews() {
+    const reviewSection = document.getElementById("reviews");
+    if (reviewSection.style.display === "none") {
+      reviewSection.style.display = "block";
+    } else {
+      reviewSection.style.display = "none";
+    }
+  }
+</script>
 
   
 
