@@ -168,18 +168,8 @@
 <script>...</script>
 <section class="reviews-toggle">
   <button onclick="toggleReviews()" class="toggle-btn">Показать отзывы клиентов</button>
-
-
-  <section id="reviews" style="display: none; padding-top: 20px;">
-    <h2>Оставить отзыв</h2>
-    <form id="review-form">
-      <input type="text" id="name" placeholder="Ваше имя" required><br><br>
-      <textarea id="review" placeholder="Ваш отзыв" required></textarea><br><br>
-      <button type="submit">Отправить</button>
-    </form>
-
-    <h2 style="margin-top: 30px;">Отзывы клиентов</h2>
-  <div id="review-list" style="margin-top: 30px;">
+<section id="reviews" style="display: none; padding-top: 20px;">
+  <h2 style="margin-top: 30px;">Отзывы клиентов</h2>
   <div class="review">
     <p><strong>Анна</strong> — 24.07.2025</p>
     <p>Очень довольна работой! Потолок как в журнале 😍 Спасибо большое!</p>
@@ -192,11 +182,10 @@
     <p><strong>Ирина</strong> — 20.07.2025</p>
     <p>Приятная команда, всё аккуратно сделали. Спасибо за потолки!</p>
   </div>
-</div>
-<div class="static-reviews-end"></div>
-
-  </section>
 </section>
+
+
+  
 
 <script>
   function toggleReviews() {
