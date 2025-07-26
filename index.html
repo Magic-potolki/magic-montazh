@@ -168,22 +168,8 @@
 
 <script>...</script>
 <section class="reviews-toggle">
-<button class="toggle-btn" onclick="toggleReviews()">Показать отзывы клиентов</button>
-<section id="reviews" style="display: none; padding-top: 20px;">
-<h2 style="margin-top: 30px;">Отзывы клиентов</h2>
-<div class="review">
-<p><strong>Анна</strong> — 24.07.2025</p>
-<p>Очень довольна работой! Потолок как в журнале 😍 Спасибо большое!</p>
-</div>
-<div class="review">
-<p><strong>Максим</strong> — 22.07.2025</p>
-<p>Быстро, качественно и недорого. Рекомендую!</p>
-</div>
-<div class="review">
-<p><strong>Ирина</strong> — 20.07.2025</p>
-<p>Приятная команда, всё аккуратно сделали. Спасибо за потолки!</p>
-</div>
-</section>
+
+
 <script>
   function toggleReviews() {
     const reviewSection = document.getElementById("reviews");
@@ -267,21 +253,7 @@ function toggleReviews() {
 
 
 <!-- БЛОК ОТЗЫВОВ -->
-<section id="reviews" style="display: none; margin-top: 20px;">
-<h2>Отзывы клиентов</h2>
-<div class="review">
-<p><strong>Анна</strong> — 24.07.2025</p>
-<p>Очень довольна работой! Потолок как в журнале 😍 Спасибо большое!</p>
-</div>
-<div class="review">
-<p><strong>Максим</strong> — 22.07.2025</p>
-<p>Быстро, качественно и недорого. Рекомендую!</p>
-</div>
-<div class="review">
-<p><strong>Ирина</strong> — 20.07.2025</p>
-<p>Приятная команда, всё аккуратно сделали. Спасибо за потолки!</p>
-</div>
-</section>
+
 <script>
   function toggleReviews() {
     const reviewSection = document.getElementById("reviews");
@@ -289,8 +261,94 @@ function toggleReviews() {
       reviewSection.style.display === "none" ? "block" : "none";
   }
 </script>
+
+<!-- КНОПКА и ФОРМА для отзыва -->
+<section class="reviews-toggle" style="margin-top: 40px;">
+  <button onclick="toggleReviews()" class="toggle-btn" style="padding: 10px 20px; background-color: #1e7e34; color: white; border: none; border-radius: 8px; font-weight: bold; cursor: pointer;">Показать отзывы клиентов</button>
+
+  <div id="reviews" style="display: none; margin-top: 20px;">
+    <h2>Оставить отзыв</h2>
+    <form id="review-form">
+      <input type="text" id="name" placeholder="Ваше имя" required><br><br>
+      <textarea id="review" placeholder="Ваш отзыв" required></textarea><br><br>
+      <button type="submit">Отправить</button>
+    </form>
+
+    <h2 style="margin-top: 30px;">Отзывы клиентов</h2>
+    <div id="review-list"></div>
+  </div>
+</section>
+
+<script>
+  function toggleReviews() {
+    const section = document.getElementById('reviews');
+    if (section.style.display === 'none') {
+      section.style.display = 'block';
+      fetchReviews();
+    } else {
+      section.style.display = 'none';
+    }
+  }
+
+  async function fetchReviews() {
+    const response = await fetch('https://opensheet.elk.sh/2PACX-1vS38FZ5-IMZ_3QjJ1ud5MhI1zZXR4JBH2tNlVqhGfkq8g3VKw7Olo9JxofLU0jHw2ol_M3oyBQiHtik/Sheet1');
+    const data = await response.json();
+    const list = document.getElementById('review-list');
+    list.innerHTML = "";
+    data.forEach(entry => {
+      const div = document.createElement('div');
+      div.className = 'review';
+      div.innerHTML = `<p><strong>${entry.Имя}</strong></p><p>${entry.Отзыв}</p>`;
+      list.appendChild(div);
+    });
+  }
+
+  document.getElementById("review-form").addEventListener("submit", function(e) {
+    e.preventDefault();
+    const name = document.getElementById("name").value.trim();
+    const review = document.getElementById("review").value.trim();
+
+    const formData = new FormData();
+    formData.append("entry.1112480727", name);   // Имя
+    formData.append("entry.2097121374", review); // Отзыв
+
+    fetch("https://docs.google.com/forms/d/e/1FAIpQLScu3oYIHPGqCWk5R4JZkE_5dGmQlBlMYaDJkJ4KuLHXbt2MDg/formResponse", {
+      method: "POST",
+      mode: "no-cors",
+      body: formData
+    }).then(() => {
+      alert("Спасибо за отзыв!");
+      document.getElementById("review-form").reset();
+      fetchReviews();
+    });
+  });
+</script>
+
 </body>
 </html>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
