@@ -4,7 +4,6 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Монтаж потолков | Грильято, Кубообразная рейка, Украина</title>
-  <link rel="stylesheet" href="style.css" />
   <style>
     body {
       font-family: Arial, sans-serif;
@@ -57,11 +56,14 @@
   <p>Телефон 2: <a href="tel:0970073990">097 007 3990</a></p>
   <p>Имя: Дмитрий</p>
 
+  <!-- КНОПКА ДЛЯ ОТЗЫВОВ -->
   <button class="review-button" onclick="toggleReviews()">Показать отзывы клиентов</button>
 
+  <!-- СЕКЦИЯ ОТЗЫВОВ -->
   <div id="reviews">
     <h2>Оставить отзыв</h2>
-    <!-- Google Форма -->
+    
+    <!-- ВСТРОЕННАЯ GOOGLE ФОРМА -->
     <iframe 
       src="https://docs.google.com/forms/d/e/1FAIpQLScpQS3Lij5_XG3AD9ezqsICGHaap1INbF_YIpgdFcpn_m5lZw/viewform?embedded=true" 
       allowfullscreen>
@@ -69,69 +71,41 @@
     </iframe>
 
     <h2>Отзывы клиентов</h2>
-    <div id="review-list">Загрузка...</div>
+    <div id="review-list">Загрузка отзывов...</div>
   </div>
 
   <script>
     function toggleReviews() {
-      const reviews = document.getElementById('reviews');
-      reviews.style.display = reviews.style.display === 'none' ? 'block' : 'none';
+      const reviews = document.getElementById("reviews");
+      reviews.style.display = reviews.style.display === "none" ? "block" : "none";
     }
 
     async function loadReviews() {
       const url = "https://docs.google.com/spreadsheets/d/e/2PACX-1vRcdyH4EsEsUTBMQgLrXGmKc3ma4tVKTVTvKGKA8h-_hWljV28Ugz-mGEo9pvwMJnkN5GCm1GSXQ9c7/pub?output=csv";
+      
+      try {
+        const response = await fetch(url);
+        const text = await response.text();
+        const rows = text.trim().split("\n").slice(1); // пропускаем заголовки
+        const list = document.getElementById("review-list");
+        list.innerHTML = "";
 
-      const response = await fetch(url);
-      const data = await response.text();
-      const rows = data.trim().split("\n").slice(1); // пропустить заголовки
-
-      const list = document.getElementById("review-list");
-      list.innerHTML = "";
-
-      rows.forEach(row => {
-        const [name, message] = row.split(",").map(cell => cell.replace(/\"/g, '').trim());
-        const div = document.createElement("div");
-        div.className = "review";
-        div.innerHTML = `<p><strong>${name}</strong></p><p>${message}</p>`;
-        list.appendChild(div);
-      });
+        rows.forEach(row => {
+          const [name, message] = row.split(",").map(cell => cell.replace(/\"/g, '').trim());
+          const div = document.createElement("div");
+          div.className = "review";
+          div.innerHTML = `<p><strong>${name}</strong></p><p>${message}</p>`;
+          list.appendChild(div);
+        });
+      } catch (error) {
+        document.getElementById("review-list").innerText = "Ошибка загрузки отзывов.";
+      }
     }
 
     window.onload = loadReviews;
   </script>
 </body>
 </html>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 
 
