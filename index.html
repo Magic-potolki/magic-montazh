@@ -89,14 +89,18 @@
         const rows = text.trim().split("\n").slice(1); // пропускаем заголовки
         const list = document.getElementById("review-list");
         list.innerHTML = "";
+rows.forEach(row => {
+  const cells = row.split(",").map(cell => cell.replace(/\"/g, '').trim());
+  const name = cells[1]; // имя
+  const message = cells[2]; // отзыв
 
-        rows.forEach(row => {
-          const [name, message] = row.split(",").map(cell => cell.replace(/\"/g, '').trim());
-          const div = document.createElement("div");
-          div.className = "review";
-          div.innerHTML = `<p><strong>${name}</strong></p><p>${message}</p>`;
-          list.appendChild(div);
-        });
+  const div = document.createElement("div");
+  div.className = "review";
+  div.innerHTML = `<p><strong>${name}</strong></p><p>${message}</p>`;
+  list.appendChild(div);
+});
+
+     
       } catch (error) {
         document.getElementById("review-list").innerText = "Ошибка загрузки отзывов.";
       }
