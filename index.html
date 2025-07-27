@@ -40,6 +40,14 @@
     .review strong {
       color: #333;
     }
+    iframe {
+      border: none;
+      width: 100%;
+      height: 500px;
+      margin-bottom: 30px;
+      border-radius: 10px;
+      box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+    }
   </style>
 </head>
 <body>
@@ -52,6 +60,14 @@
   <button class="review-button" onclick="toggleReviews()">Показать отзывы клиентов</button>
 
   <div id="reviews">
+    <h2>Оставить отзыв</h2>
+    <!-- Google Форма -->
+    <iframe 
+      src="https://docs.google.com/forms/d/e/1FAIpQLScpQS3Lij5_XG3AD9ezqsICGHaap1INbF_YIpgdFcpn_m5lZw/viewform?embedded=true" 
+      allowfullscreen>
+      Загрузка…
+    </iframe>
+
     <h2>Отзывы клиентов</h2>
     <div id="review-list">Загрузка...</div>
   </div>
@@ -67,7 +83,7 @@
 
       const response = await fetch(url);
       const data = await response.text();
-      const rows = data.trim().split("\n").slice(1); // skip header
+      const rows = data.trim().split("\n").slice(1); // пропустить заголовки
 
       const list = document.getElementById("review-list");
       list.innerHTML = "";
