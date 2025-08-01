@@ -8,7 +8,8 @@
     body {
       font-family: Arial, sans-serif;
       padding: 20px;
-      background-color: #f9f9f9;
+      background-color: #1e1e1e; /* тёмный фон */
+      color: white; /* текст белый */
     }
     .call-button, .review-button {
       display: inline-block;
@@ -30,14 +31,15 @@
       margin-top: 20px;
     }
     .review {
-      background-color: #fff;
+      background-color: #2a2a2a;
       border-radius: 10px;
-      box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+      box-shadow: 0 2px 5px rgba(255,255,255,0.05);
       padding: 15px;
       margin-bottom: 10px;
+      color: white;
     }
     .review strong {
-      color: #333;
+      color: #7CFC00;
     }
     iframe {
       border: none;
@@ -45,14 +47,15 @@
       height: 500px;
       margin-bottom: 30px;
       border-radius: 10px;
-      box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+      background-color: #2a2a2a;
+      box-shadow: 0 2px 5px rgba(255,255,255,0.05);
     }
     #services {
-      background-color: #fff;
+      background-color: #2a2a2a;
       padding: 20px;
       margin-bottom: 20px;
       border-radius: 15px;
-      box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+      box-shadow: 0 2px 5px rgba(255,255,255,0.05);
     }
     #services h2 {
       font-size: 24px;
@@ -68,36 +71,31 @@
     }
     /* Галерея */
     #gallery {
-      background-color: #fff;
+      background-color: #2a2a2a;
       padding: 20px;
       margin-bottom: 20px;
       border-radius: 15px;
-      box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+      box-shadow: 0 2px 5px rgba(255,255,255,0.05);
     }
-
     #gallery h2 {
       font-size: 24px;
       margin-bottom: 15px;
     }
-
     .gallery {
       display: grid;
       grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
       gap: 10px;
     }
-
     .gallery img {
       width: 100%;
       border-radius: 10px;
-      box-shadow: 0 2px 5px rgba(0,0,0,0.2);
+      box-shadow: 0 2px 5px rgba(255,255,255,0.1);
       transition: transform 0.3s ease;
       cursor: pointer;
     }
-
     .gallery img:hover {
       transform: scale(1.05);
     }
-
     /* Модальное окно */
     #modal {
       display: none;
@@ -105,20 +103,18 @@
       top: 0; left: 0;
       width: 100vw;
       height: 100vh;
-      background-color: rgba(0,0,0,0.9);
+      background-color: rgba(0,0,0,0.95);
       justify-content: center;
       align-items: center;
       z-index: 10000;
       user-select: none;
     }
-
     #modal img {
       max-width: 90vw;
       max-height: 90vh;
       border-radius: 10px;
-      box-shadow: 0 0 20px white;
+      box-shadow: 0 0 20px rgba(255,255,255,0.2);
     }
-
     /* Кнопки управления */
     .modal-btn {
       position: fixed;
@@ -137,14 +133,8 @@
     .modal-btn:hover {
       background: rgba(0,0,0,0.7);
     }
-
-    #modal-prev {
-      left: 20px;
-    }
-    #modal-next {
-      right: 20px;
-    }
-
+    #modal-prev { left: 20px; }
+    #modal-next { right: 20px; }
     /* Кнопка закрытия */
     #modal-close {
       position: fixed;
@@ -163,13 +153,13 @@
     #modal-close:hover {
       background: rgba(0,0,0,0.7);
     }
-
+    a { color: #7CFC00; }
   </style>
 </head>
 <body>
   <header style="text-align: center; margin-bottom: 30px;">
-    <h1 style="font-size: 2.2em; color: #2c3e50;">Magic — Подвесные потолки (монтаж и продажа материалов)</h1>
-    <p style="font-size: 1.2em; color: #555;">
+    <h1 style="font-size: 2.2em; color: #7CFC00;">Magic — Подвесные потолки (монтаж и продажа материалов)</h1>
+    <p style="font-size: 1.2em; color: #ddd;">
       Профессиональный монтаж и продажа стройматериалов для потолков по всей Украине
     </p>
   </header>
@@ -217,13 +207,7 @@
   <!-- СЕКЦИЯ ОТЗЫВОВ -->
   <div id="reviews">
     <h2>Оставить отзыв</h2>
-    <!-- ВСТРОЕННАЯ GOOGLE ФОРМА -->
-    <iframe 
-      src="https://docs.google.com/forms/d/e/1FAIpQLScpQS3Lij5_XG3AD9ezqsICGHaap1INbF_YIpgdFcpn_m5lZw/viewform?embedded=true" 
-      allowfullscreen>
-      Загрузка…
-    </iframe>
-
+    <iframe src="https://docs.google.com/forms/d/e/1FAIpQLScpQS3Lij5_XG3AD9ezqsICGHaap1INbF_YIpgdFcpn_m5lZw/viewform?embedded=true" allowfullscreen></iframe>
     <h2>Отзывы клиентов</h2>
     <div id="review-list">Загрузка отзывов...</div>
   </div>
@@ -244,18 +228,16 @@
 
     async function loadReviews() {
       const url = "https://docs.google.com/spreadsheets/d/e/2PACX-1vRcdyH4EsEsUTBMQgLrXGmKc3ma4tVKTVTvKGKA8h-_hWljV28Ugz-mGEo9pvwMJnkN5GCm1GSXQ9c7/pub?output=csv";
-      
       try {
         const response = await fetch(url);
         const text = await response.text();
-        const rows = text.trim().split("\n").slice(1); // пропускаем заголовки
+        const rows = text.trim().split("\n").slice(1);
         const list = document.getElementById("review-list");
         list.innerHTML = "";
         rows.forEach(row => {
           const cells = row.split(",").map(cell => cell.replace(/\"/g, '').trim());
-          const name = cells[1]; // имя
-          const message = cells[2]; // отзыв
-
+          const name = cells[1];
+          const message = cells[2];
           const div = document.createElement("div");
           div.className = "review";
           div.innerHTML = `<p><strong>${name}</strong></p><p>${message}</p>`;
@@ -265,18 +247,15 @@
         document.getElementById("review-list").innerText = "Ошибка загрузки отзывов.";
       }
     }
-
     window.onload = loadReviews;
 
-    // Галерея с модальным просмотром и листанием
-
+    // Галерея с модальным просмотром
     const galleryImages = document.querySelectorAll(".gallery img");
     const modal = document.getElementById("modal");
     const modalImg = document.getElementById("modal-img");
     const modalClose = document.getElementById("modal-close");
     const modalPrev = document.getElementById("modal-prev");
     const modalNext = document.getElementById("modal-next");
-
     let currentIndex = 0;
 
     function openModal(index) {
@@ -284,84 +263,37 @@
       modal.style.display = "flex";
       modalImg.src = galleryImages[currentIndex].src;
       modalImg.alt = galleryImages[currentIndex].alt;
-      document.body.style.overflow = "hidden"; // Запрет прокрутки страницы под модалкой
+      document.body.style.overflow = "hidden";
     }
-
     function closeModal() {
       modal.style.display = "none";
       modalImg.src = "";
-      modalImg.alt = "";
-      document.body.style.overflow = ""; // Возвращаем прокрутку
+      document.body.style.overflow = "";
     }
-
     function showPrev() {
       currentIndex = (currentIndex - 1 + galleryImages.length) % galleryImages.length;
       modalImg.src = galleryImages[currentIndex].src;
-      modalImg.alt = galleryImages[currentIndex].alt;
     }
-
     function showNext() {
       currentIndex = (currentIndex + 1) % galleryImages.length;
       modalImg.src = galleryImages[currentIndex].src;
-      modalImg.alt = galleryImages[currentIndex].alt;
     }
-
-    // Навешиваем обработчики на миниатюры
     galleryImages.forEach((img, index) => {
       img.addEventListener("click", () => openModal(index));
     });
-
     modalClose.addEventListener("click", closeModal);
     modalPrev.addEventListener("click", showPrev);
     modalNext.addEventListener("click", showNext);
-
-    // Закрываем модалку при клике вне изображения
     modal.addEventListener("click", (e) => {
-      if (e.target === modal) {
-        closeModal();
-      }
+      if (e.target === modal) closeModal();
     });
-
-    // Можно закрывать клавишей ESC
     document.addEventListener("keydown", (e) => {
       if (modal.style.display === "flex") {
-        if (e.key === "Escape") {
-          closeModal();
-        } else if (e.key === "ArrowLeft") {
-          showPrev();
-        } else if (e.key === "ArrowRight") {
-          showNext();
-        }
+        if (e.key === "Escape") closeModal();
+        else if (e.key === "ArrowLeft") showPrev();
+        else if (e.key === "ArrowRight") showNext();
       }
     });
-
   </script>
 </body>
 </html>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
