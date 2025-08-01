@@ -66,7 +66,36 @@
   margin-bottom: 5px;
   color: #28a745;
 }
+/* Галерея */
+#gallery {
+  background-color: #fff;
+  padding: 20px;
+  margin-bottom: 20px;
+  border-radius: 15px;
+  box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+}
 
+#gallery h2 {
+  font-size: 24px;
+  margin-bottom: 15px;
+}
+
+.gallery {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 10px;
+}
+
+.gallery img {
+  width: 100%;
+  border-radius: 10px;
+  box-shadow: 0 2px 5px rgba(0,0,0,0.2);
+  transition: transform 0.3s ease;
+}
+
+.gallery img:hover {
+  transform: scale(1.05);
+}
   </style>
 </head>
 <body>
@@ -102,6 +131,17 @@
   <p>Телефон 1: <a href="tel:0952281220">095 228 1220</a></p>
   <p>Телефон 2: <a href="tel:0970073990">097 007 3990</a></p>
   <p>Имя: Дмитрий</p>
+  <section id="gallery">
+  <h2>Галерея работ</h2>
+  <div class="gallery">
+    <img src="images/IMG_0210.JPG" alt="Потолок 1">
+    <img src="images/IMG_8117.JPG" alt="Потолок 2">
+    <img src="images/IMG_8189.JPG" alt="Потолок 3">
+    <img src="images/IMG_8083.JPG" alt="Потолок 4">
+    <img src="images/IMG_0022.jpg" alt="Потолок 5">
+  </div>
+</section>
+
 
   <!-- КНОПКА ДЛЯ ОТЗЫВОВ -->
   <button class="review-button" onclick="toggleReviews()">Показать отзывы клиентов</button>
