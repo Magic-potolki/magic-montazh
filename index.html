@@ -8,8 +8,8 @@
     body {
       font-family: Arial, sans-serif;
       padding: 20px;
-      background-color: #1e1e1e; /* тёмный фон */
-      color: white; /* текст белый */
+      background: linear-gradient(to bottom, #f8f9fa, #e9ecef); /* светлый градиент */
+      color: #333;
     }
     .call-button, .review-button {
       display: inline-block;
@@ -31,15 +31,15 @@
       margin-top: 20px;
     }
     .review {
-      background-color: #2a2a2a;
+      background-color: #fff;
       border-radius: 10px;
-      box-shadow: 0 2px 5px rgba(255,255,255,0.05);
+      box-shadow: 0 2px 5px rgba(0,0,0,0.05);
       padding: 15px;
       margin-bottom: 10px;
-      color: white;
+      color: #333;
     }
     .review strong {
-      color: #7CFC00;
+      color: #28a745;
     }
     iframe {
       border: none;
@@ -47,15 +47,15 @@
       height: 500px;
       margin-bottom: 30px;
       border-radius: 10px;
-      background-color: #2a2a2a;
-      box-shadow: 0 2px 5px rgba(255,255,255,0.05);
+      background-color: #fff;
+      box-shadow: 0 2px 5px rgba(0,0,0,0.05);
     }
     #services {
-      background-color: #2a2a2a;
+      background-color: #fff;
       padding: 20px;
       margin-bottom: 20px;
       border-radius: 15px;
-      box-shadow: 0 2px 5px rgba(255,255,255,0.05);
+      box-shadow: 0 2px 5px rgba(0,0,0,0.05);
     }
     #services h2 {
       font-size: 24px;
@@ -71,11 +71,11 @@
     }
     /* Галерея */
     #gallery {
-      background-color: #2a2a2a;
+      background-color: #fff;
       padding: 20px;
       margin-bottom: 20px;
       border-radius: 15px;
-      box-shadow: 0 2px 5px rgba(255,255,255,0.05);
+      box-shadow: 0 2px 5px rgba(0,0,0,0.05);
     }
     #gallery h2 {
       font-size: 24px;
@@ -89,7 +89,7 @@
     .gallery img {
       width: 100%;
       border-radius: 10px;
-      box-shadow: 0 2px 5px rgba(255,255,255,0.1);
+      box-shadow: 0 2px 5px rgba(0,0,0,0.1);
       transition: transform 0.3s ease;
       cursor: pointer;
     }
@@ -153,13 +153,13 @@
     #modal-close:hover {
       background: rgba(0,0,0,0.7);
     }
-    a { color: #7CFC00; }
+    a { color: #28a745; }
   </style>
 </head>
 <body>
   <header style="text-align: center; margin-bottom: 30px;">
-    <h1 style="font-size: 2.2em; color: #7CFC00;">Magic — Подвесные потолки (монтаж и продажа материалов)</h1>
-    <p style="font-size: 1.2em; color: #ddd;">
+    <h1 style="font-size: 2.2em; color: #28a745;">Magic — Подвесные потолки (монтаж и продажа материалов)</h1>
+    <p style="font-size: 1.2em; color: #555;">
       Профессиональный монтаж и продажа стройматериалов для потолков по всей Украине
     </p>
   </header>
@@ -201,10 +201,8 @@
   <p>Телефон 2: <a href="tel:0970073990">097 007 3990</a></p>
   <p>Имя: Дмитрий</p>
 
-  <!-- КНОПКА ДЛЯ ОТЗЫВОВ -->
   <button class="review-button" onclick="toggleReviews()">Показать отзывы клиентов</button>
 
-  <!-- СЕКЦИЯ ОТЗЫВОВ -->
   <div id="reviews">
     <h2>Оставить отзыв</h2>
     <iframe src="https://docs.google.com/forms/d/e/1FAIpQLScpQS3Lij5_XG3AD9ezqsICGHaap1INbF_YIpgdFcpn_m5lZw/viewform?embedded=true" allowfullscreen></iframe>
@@ -212,7 +210,6 @@
     <div id="review-list">Загрузка отзывов...</div>
   </div>
 
-  <!-- МОДАЛЬНОЕ ОКНО ДЛЯ ГАЛЕРЕИ -->
   <div id="modal">
     <button id="modal-close" aria-label="Закрыть">&times;</button>
     <button id="modal-prev" class="modal-btn" aria-label="Предыдущее фото">&#10094;</button>
@@ -249,7 +246,6 @@
     }
     window.onload = loadReviews;
 
-    // Галерея с модальным просмотром
     const galleryImages = document.querySelectorAll(".gallery img");
     const modal = document.getElementById("modal");
     const modalImg = document.getElementById("modal-img");
