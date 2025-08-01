@@ -48,102 +48,168 @@
       box-shadow: 0 2px 5px rgba(0,0,0,0.1);
     }
     #services {
-  background-color: #fff;
-  padding: 20px;
-  margin-bottom: 20px;
-  border-radius: 15px;
-  box-shadow: 0 2px 5px rgba(0,0,0,0.1);
-}
-#services h2 {
-  font-size: 24px;
-  margin-bottom: 15px;
-}
-.service {
-  margin-bottom: 15px;
-}
-.service h3 {
-  font-size: 18px;
-  margin-bottom: 5px;
-  color: #28a745;
-}
-/* Галерея */
-#gallery {
-  background-color: #fff;
-  padding: 20px;
-  margin-bottom: 20px;
-  border-radius: 15px;
-  box-shadow: 0 2px 5px rgba(0,0,0,0.1);
-}
+      background-color: #fff;
+      padding: 20px;
+      margin-bottom: 20px;
+      border-radius: 15px;
+      box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+    }
+    #services h2 {
+      font-size: 24px;
+      margin-bottom: 15px;
+    }
+    .service {
+      margin-bottom: 15px;
+    }
+    .service h3 {
+      font-size: 18px;
+      margin-bottom: 5px;
+      color: #28a745;
+    }
+    /* Галерея */
+    #gallery {
+      background-color: #fff;
+      padding: 20px;
+      margin-bottom: 20px;
+      border-radius: 15px;
+      box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+    }
 
-#gallery h2 {
-  font-size: 24px;
-  margin-bottom: 15px;
-}
+    #gallery h2 {
+      font-size: 24px;
+      margin-bottom: 15px;
+    }
 
-.gallery {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-  gap: 10px;
-}
+    .gallery {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+      gap: 10px;
+    }
 
-.gallery img {
-  width: 100%;
-  border-radius: 10px;
-  box-shadow: 0 2px 5px rgba(0,0,0,0.2);
-  transition: transform 0.3s ease;
-}
+    .gallery img {
+      width: 100%;
+      border-radius: 10px;
+      box-shadow: 0 2px 5px rgba(0,0,0,0.2);
+      transition: transform 0.3s ease;
+      cursor: pointer;
+    }
 
-.gallery img:hover {
-  transform: scale(1.05);
-}
+    .gallery img:hover {
+      transform: scale(1.05);
+    }
+
+    /* Модальное окно */
+    #modal {
+      display: none;
+      position: fixed;
+      top: 0; left: 0;
+      width: 100vw;
+      height: 100vh;
+      background-color: rgba(0,0,0,0.9);
+      justify-content: center;
+      align-items: center;
+      z-index: 10000;
+      user-select: none;
+    }
+
+    #modal img {
+      max-width: 90vw;
+      max-height: 90vh;
+      border-radius: 10px;
+      box-shadow: 0 0 20px white;
+    }
+
+    /* Кнопки управления */
+    .modal-btn {
+      position: fixed;
+      top: 50%;
+      transform: translateY(-50%);
+      font-size: 50px;
+      color: white;
+      background: rgba(0,0,0,0.4);
+      border: none;
+      padding: 10px 15px;
+      cursor: pointer;
+      border-radius: 5px;
+      user-select: none;
+      transition: background 0.3s ease;
+    }
+    .modal-btn:hover {
+      background: rgba(0,0,0,0.7);
+    }
+
+    #modal-prev {
+      left: 20px;
+    }
+    #modal-next {
+      right: 20px;
+    }
+
+    /* Кнопка закрытия */
+    #modal-close {
+      position: fixed;
+      top: 20px;
+      right: 30px;
+      font-size: 40px;
+      color: white;
+      background: rgba(0,0,0,0.4);
+      border: none;
+      padding: 5px 12px;
+      border-radius: 5px;
+      cursor: pointer;
+      user-select: none;
+      transition: background 0.3s ease;
+    }
+    #modal-close:hover {
+      background: rgba(0,0,0,0.7);
+    }
+
   </style>
 </head>
 <body>
   <header style="text-align: center; margin-bottom: 30px;">
-  <h1 style="font-size: 2.2em; color: #2c3e50;">Magic — Подвесные потолки (монтаж и продажа материалов)</h1>
-  <p style="font-size: 1.2em; color: #555;">
-    Профессиональный монтаж и продажа стройматериалов для потолков по всей Украине
-  </p>
-</header>
+    <h1 style="font-size: 2.2em; color: #2c3e50;">Magic — Подвесные потолки (монтаж и продажа материалов)</h1>
+    <p style="font-size: 1.2em; color: #555;">
+      Профессиональный монтаж и продажа стройматериалов для потолков по всей Украине
+    </p>
+  </header>
 
-<section id="services">
-  <h2>Виды работ</h2>
-  <div class="service">
-    <h3>🔹 Потолки «Амстронг»</h3>
-    <p>Классический вариант для офисов и коммерческих помещений.</p>
-  </div>
-  <div class="service">
-    <h3>🔸 Грильято</h3>
-    <p>Современный стиль, открытая конструкция и отличная вентиляция.</p>
-  </div>
-  <div class="service">
-    <h3>⬛ Кубообразная рейка</h3>
-    <p>Дизайнерское решение с акустическим эффектом.</p>
-  </div>
-  <div class="service">
-    <h3>🟨 Гипсокартон</h3>
-    <p>Идеально для многоуровневых потолков и световых конструкций.</p>
-  </div>
-</section>
+  <section id="services">
+    <h2>Виды работ</h2>
+    <div class="service">
+      <h3>🔹 Потолки «Амстронг»</h3>
+      <p>Классический вариант для офисов и коммерческих помещений.</p>
+    </div>
+    <div class="service">
+      <h3>🔸 Грильято</h3>
+      <p>Современный стиль, открытая конструкция и отличная вентиляция.</p>
+    </div>
+    <div class="service">
+      <h3>⬛ Кубообразная рейка</h3>
+      <p>Дизайнерское решение с акустическим эффектом.</p>
+    </div>
+    <div class="service">
+      <h3>🟨 Гипсокартон</h3>
+      <p>Идеально для многоуровневых потолков и световых конструкций.</p>
+    </div>
+  </section>
+
   <section id="gallery">
-  <h2>Галерея работ</h2>
-  <div class="gallery">
-    <img src="images/IMG_0210.JPG" alt="Потолок 1">
-    <img src="images/IMG_8117.JPG" alt="Потолок 2">
-    <img src="images/IMG_8189.JPG" alt="Потолок 3">
-    <img src="images/IMG_8083.JPG" alt="Потолок 4">
-    <img src="images/IMG_0022.jpg" alt="Потолок 5">
-     </div>
-</section>
+    <h2>Галерея работ</h2>
+    <div class="gallery">
+      <img src="images/IMG_0210.JPG" alt="Потолок 1">
+      <img src="images/IMG_8117.JPG" alt="Потолок 2">
+      <img src="images/IMG_8189.JPG" alt="Потолок 3">
+      <img src="images/IMG_8083.JPG" alt="Потолок 4">
+      <img src="images/IMG_0022.jpg" alt="Потолок 5">
+    </div>
+  </section>
+
   <h1>Контакты</h1>
   <p>Город: Днепр</p>
   <p>Телефон 1: <a href="tel:0952281220">095 228 1220</a></p>
   <p>Телефон 2: <a href="tel:0970073990">097 007 3990</a></p>
   <p>Имя: Дмитрий</p>
-
-  </div>
-</section>
-
 
   <!-- КНОПКА ДЛЯ ОТЗЫВОВ -->
   <button class="review-button" onclick="toggleReviews()">Показать отзывы клиентов</button>
@@ -151,7 +217,6 @@
   <!-- СЕКЦИЯ ОТЗЫВОВ -->
   <div id="reviews">
     <h2>Оставить отзыв</h2>
-    
     <!-- ВСТРОЕННАЯ GOOGLE ФОРМА -->
     <iframe 
       src="https://docs.google.com/forms/d/e/1FAIpQLScpQS3Lij5_XG3AD9ezqsICGHaap1INbF_YIpgdFcpn_m5lZw/viewform?embedded=true" 
@@ -161,6 +226,14 @@
 
     <h2>Отзывы клиентов</h2>
     <div id="review-list">Загрузка отзывов...</div>
+  </div>
+
+  <!-- МОДАЛЬНОЕ ОКНО ДЛЯ ГАЛЕРЕИ -->
+  <div id="modal">
+    <button id="modal-close" aria-label="Закрыть">&times;</button>
+    <button id="modal-prev" class="modal-btn" aria-label="Предыдущее фото">&#10094;</button>
+    <img id="modal-img" src="" alt="Фото потолка" />
+    <button id="modal-next" class="modal-btn" aria-label="Следующее фото">&#10095;</button>
   </div>
 
   <script>
@@ -178,27 +251,94 @@
         const rows = text.trim().split("\n").slice(1); // пропускаем заголовки
         const list = document.getElementById("review-list");
         list.innerHTML = "";
-rows.forEach(row => {
-  const cells = row.split(",").map(cell => cell.replace(/\"/g, '').trim());
-  const name = cells[1]; // имя
-  const message = cells[2]; // отзыв
+        rows.forEach(row => {
+          const cells = row.split(",").map(cell => cell.replace(/\"/g, '').trim());
+          const name = cells[1]; // имя
+          const message = cells[2]; // отзыв
 
-  const div = document.createElement("div");
-  div.className = "review";
-  div.innerHTML = `<p><strong>${name}</strong></p><p>${message}</p>`;
-  list.appendChild(div);
-});
-
-     
+          const div = document.createElement("div");
+          div.className = "review";
+          div.innerHTML = `<p><strong>${name}</strong></p><p>${message}</p>`;
+          list.appendChild(div);
+        });
       } catch (error) {
         document.getElementById("review-list").innerText = "Ошибка загрузки отзывов.";
       }
     }
 
     window.onload = loadReviews;
+
+    // Галерея с модальным просмотром и листанием
+
+    const galleryImages = document.querySelectorAll(".gallery img");
+    const modal = document.getElementById("modal");
+    const modalImg = document.getElementById("modal-img");
+    const modalClose = document.getElementById("modal-close");
+    const modalPrev = document.getElementById("modal-prev");
+    const modalNext = document.getElementById("modal-next");
+
+    let currentIndex = 0;
+
+    function openModal(index) {
+      currentIndex = index;
+      modal.style.display = "flex";
+      modalImg.src = galleryImages[currentIndex].src;
+      modalImg.alt = galleryImages[currentIndex].alt;
+      document.body.style.overflow = "hidden"; // Запрет прокрутки страницы под модалкой
+    }
+
+    function closeModal() {
+      modal.style.display = "none";
+      modalImg.src = "";
+      modalImg.alt = "";
+      document.body.style.overflow = ""; // Возвращаем прокрутку
+    }
+
+    function showPrev() {
+      currentIndex = (currentIndex - 1 + galleryImages.length) % galleryImages.length;
+      modalImg.src = galleryImages[currentIndex].src;
+      modalImg.alt = galleryImages[currentIndex].alt;
+    }
+
+    function showNext() {
+      currentIndex = (currentIndex + 1) % galleryImages.length;
+      modalImg.src = galleryImages[currentIndex].src;
+      modalImg.alt = galleryImages[currentIndex].alt;
+    }
+
+    // Навешиваем обработчики на миниатюры
+    galleryImages.forEach((img, index) => {
+      img.addEventListener("click", () => openModal(index));
+    });
+
+    modalClose.addEventListener("click", closeModal);
+    modalPrev.addEventListener("click", showPrev);
+    modalNext.addEventListener("click", showNext);
+
+    // Закрываем модалку при клике вне изображения
+    modal.addEventListener("click", (e) => {
+      if (e.target === modal) {
+        closeModal();
+      }
+    });
+
+    // Можно закрывать клавишей ESC
+    document.addEventListener("keydown", (e) => {
+      if (modal.style.display === "flex") {
+        if (e.key === "Escape") {
+          closeModal();
+        } else if (e.key === "ArrowLeft") {
+          showPrev();
+        } else if (e.key === "ArrowRight") {
+          showNext();
+        }
+      }
+    });
+
   </script>
 </body>
 </html>
+
 
 
 
