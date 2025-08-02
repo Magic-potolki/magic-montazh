@@ -5,6 +5,11 @@
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>Монтаж подвесных потолков в Днепре — Грильято, Кубообразная рейка, Амстронг | Magic</title>
 
+  <!-- SEO мета-теги -->
+  <meta name="description" content="Профессиональный монтаж подвесных потолков в Днепре и по всей Украине. Потолки Грильято, Кубообразная рейка, Амстронг, Гипсокартон. Заказать монтаж потолков по выгодной цене. Тел: 095 228 1220" />
+  <meta name="keywords" content="монтаж потолков, подвесные потолки, грильято, кубообразная рейка, амстронг, гипсокартон, потолки Днепр, установка потолков, заказать потолки, потолки Украина" />
+  <meta name="robots" content="index, follow" />
+
   <style>
     body {
       font-family: Arial, sans-serif;
@@ -27,6 +32,130 @@
     .review-button:hover, .call-button:hover {
       background-color: #218838;
     }
+    #reviews {
+      display: none;
+      margin-top: 20px;
+    }
+    .review {
+      background-color: #fff;
+      border-radius: 10px;
+      box-shadow: 0 2px 5px rgba(0,0,0,0.05);
+      padding: 15px;
+      margin-bottom: 10px;
+      color: #333;
+    }
+    .review strong {
+      color: #28a745;
+    }
+    iframe {
+      border: none;
+      width: 100%;
+      height: 500px;
+      margin-bottom: 30px;
+      border-radius: 10px;
+      background-color: #fff;
+      box-shadow: 0 2px 5px rgba(0,0,0,0.05);
+    }
+    #services {
+      background-color: #fff;
+      padding: 20px;
+      margin-bottom: 20px;
+      border-radius: 15px;
+      box-shadow: 0 2px 5px rgba(0,0,0,0.05);
+    }
+    #services h2 {
+      font-size: 24px;
+      margin-bottom: 15px;
+      color: #28a745;
+    }
+    .service {
+      margin-bottom: 15px;
+    }
+    .service h3 {
+      font-size: 18px;
+      margin-bottom: 5px;
+      color: #28a745;
+    }
+    .service p {
+      font-size: 15px;
+      color: #555;
+      line-height: 1.4;
+    }
+    #gallery {
+      background-color: #fff;
+      padding: 20px;
+      margin-bottom: 20px;
+      border-radius: 15px;
+      box-shadow: 0 2px 5px rgba(0,0,0,0.05);
+    }
+    #gallery h2 {
+      font-size: 24px;
+      margin-bottom: 15px;
+      color: #28a745;
+    }
+    .gallery {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+      gap: 10px;
+    }
+    .gallery img {
+      width: 100%;
+      border-radius: 10px;
+      box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+      transition: transform 0.3s ease;
+      cursor: pointer;
+    }
+    .gallery img:hover {
+      transform: scale(1.05);
+    }
+    #modal {
+      display: none;
+      position: fixed;
+      top: 0; left: 0;
+      width: 100vw;
+      height: 100vh;
+      background-color: rgba(0,0,0,0.95);
+      justify-content: center;
+      align-items: center;
+      z-index: 10000;
+      user-select: none;
+    }
+    #modal img {
+      max-width: 90vw;
+      max-height: 90vh;
+      border-radius: 10px;
+      box-shadow: 0 0 20px rgba(255,255,255,0.2);
+    }
+    .modal-btn {
+      position: fixed;
+      top: 50%;
+      transform: translateY(-50%);
+      font-size: 50px;
+      color: white;
+      background: rgba(0,0,0,0.4);
+      border: none;
+      padding: 10px 15px;
+      cursor: pointer;
+      border-radius: 5px;
+      transition: background 0.3s ease;
+    }
+    .modal-btn:hover { background: rgba(0,0,0,0.7); }
+    #modal-prev { left: 20px; }
+    #modal-next { right: 20px; }
+    #modal-close {
+      position: fixed;
+      top: 20px;
+      right: 30px;
+      font-size: 40px;
+      color: white;
+      background: rgba(0,0,0,0.4);
+      border: none;
+      padding: 5px 12px;
+      border-radius: 5px;
+      cursor: pointer;
+    }
+    #modal-close:hover { background: rgba(0,0,0,0.7); }
+    a { color: #28a745; }
 
     /* Плавающая кнопка звонка */
     .floating-call {
@@ -46,9 +175,18 @@
       z-index: 9999;
       cursor: pointer;
       transition: background-color 0.3s ease;
+      animation: bounce 0.6s ease infinite paused;
+    }
+    /* Эффект прыжка */
+    @keyframes bounce {
+      0%, 100% { transform: translateY(0); }
+      30% { transform: translateY(-10px); }
+      50% { transform: translateY(0); }
+      70% { transform: translateY(-5px); }
     }
     .floating-call:hover {
       background-color: #218838;
+      animation-play-state: running;
     }
 
     /* Модальное окно выбора номера */
@@ -73,9 +211,7 @@
       border-radius: 8px;
       transition: background-color 0.2s ease;
     }
-    .call-modal a:hover {
-      background-color: #f1f1f1;
-    }
+    .call-modal a:hover { background-color: #f1f1f1; }
     .call-modal-close {
       display: block;
       text-align: right;
@@ -84,52 +220,176 @@
       color: #999;
       margin-bottom: 5px;
     }
-    .call-modal-close:hover {
-      color: #333;
-    }
+    .call-modal-close:hover { color: #333; }
   </style>
 </head>
 <body>
 
-  <header style="text-align: center; margin-bottom: 30px;">
-    <h1 style="font-size: 2.2em; color: #28a745;">
-      Magic — Профессиональный монтаж подвесных потолков в Днепре и по всей Украине
-    </h1>
-    <p style="font-size: 1.2em; color: #555;">
-      Предлагаем монтаж и продажу материалов: потолки Грильято, Кубообразная рейка, Амстронг, Гипсокартон. Быстро, качественно и по выгодной цене.
-    </p>
-  </header>
+<header style="text-align: center; margin-bottom: 30px;">
+  <h1 style="font-size: 2.2em; color: #28a745;">
+    Magic — Профессиональный монтаж подвесных потолков в Днепре и по всей Украине
+  </h1>
+  <p style="font-size: 1.2em; color: #555;">
+    Предлагаем монтаж и продажу материалов: потолки Грильято, Кубообразная рейка, Амстронг, Гипсокартон. Быстро, качественно и по выгодной цене.
+  </p>
+</header>
 
-  <!-- Контент страницы -->
-  <p>Город: Днепр, Украина</p>
-  <p>Телефон 1: <a href="tel:0952281220">095 228 1220</a></p>
-  <p>Телефон 2: <a href="tel:0970073990">097 007 3990</a></p>
-  <p>Ответственный: Дмитрий</p>
-
-  <!-- Плавающая кнопка 📞 -->
-  <div class="floating-call" onclick="toggleCallModal()">📞</div>
-
-  <!-- Модальное окно выбора номера -->
-  <div id="callModal" class="call-modal">
-    <div class="call-modal-close" onclick="toggleCallModal()">✖</div>
-    <a href="tel:0952281220">📱 095 228 1220</a>
-    <a href="tel:0970073990">📱 097 007 3990</a>
+<section id="services">
+  <h2>Виды потолков и монтажные работы в Днепре и Украине</h2>
+  <div class="service">
+    <h3>🔹 Потолки «Амстронг»</h3>
+    <p>Классический и популярный вариант для офисов и коммерческих помещений. Профессиональный монтаж с гарантией качества.</p>
   </div>
+  <div class="service">
+    <h3>🔸 Грильято</h3>
+    <p>Современный стиль, открытая конструкция и отличная вентиляция. Идеально для помещений с высокими требованиями к дизайну.</p>
+  </div>
+  <div class="service">
+    <h3>⬛ Кубообразная рейка</h3>
+    <p>Дизайнерское решение с акустическим эффектом. Отличается долговечностью и стильным видом.</p>
+  </div>
+  <div class="service">
+    <h3>🟨 Гипсокартон</h3>
+    <p>Идеально подходит для многоуровневых потолков и световых конструкций. Возможность создания уникальных дизайнов.</p>
+  </div>
+</section>
 
-  <script>
-    function toggleCallModal() {
-      const modal = document.getElementById('callModal');
-      modal.style.display = modal.style.display === 'block' ? 'none' : 'block';
-    }
-    // Закрытие при клике вне окна
-    document.addEventListener('click', function(e) {
-      const modal = document.getElementById('callModal');
-      const button = document.querySelector('.floating-call');
-      if (!modal.contains(e.target) && !button.contains(e.target)) {
-        modal.style.display = 'none';
-      }
+<section id="gallery">
+  <h2>Галерея наших работ — монтаж потолков в Днепре</h2>
+  <div class="gallery">
+    <img src="images/IMG_0210.JPG" alt="Потолок Амстронг" />
+    <img src="images/IMG_8117.JPG" alt="Потолок Грильято" />
+    <img src="images/IMG_8189.JPG" alt="Потолок Кубообразная рейка" />
+    <img src="images/IMG_8083.JPG" alt="Потолок Гипсокартон" />
+    <img src="images/IMG_0022.jpg" alt="Пример монтажа подвесного потолка" />
+  </div>
+</section>
+
+<h1>Контакты для заказа монтажа потолков в Днепре</h1>
+<p>Город: Днепр, Украина</p>
+<p>Телефон 1: <a href="tel:0952281220">095 228 1220</a></p>
+<p>Телефон 2: <a href="tel:0970073990">097 007 3990</a></p>
+<p>Ответственный: Дмитрий</p>
+
+<button class="review-button" onclick="toggleReviews()">Показать отзывы клиентов</button>
+
+<div id="reviews">
+  <h2>Оставить отзыв о монтаже потолков</h2>
+  <iframe src="https://docs.google.com/forms/d/e/1FAIpQLScpQS3Lij5_XG3AD9ezqsICGHaap1INbF_YIpgdFcpn_m5lZw/viewform?embedded=true"></iframe>
+  <h2>Отзывы наших клиентов</h2>
+  <div id="review-list">Загрузка отзывов...</div>
+</div>
+
+<div id="modal">
+  <button id="modal-close" aria-label="Закрыть">&times;</button>
+  <button id="modal-prev" class="modal-btn" aria-label="Предыдущее фото">&#10094;</button>
+  <img id="modal-img" src="" alt="Фото потолка" />
+  <button id="modal-next" class="modal-btn" aria-label="Следующее фото">&#10095;</button>
+</div>
+
+<!-- Плавающая кнопка 📞 -->
+<div class="floating-call" onclick="toggleCallModal()">📞</div>
+
+<!-- Модальное окно выбора номера -->
+<div id="callModal" class="call-modal">
+  <div class="call-modal-close" onclick="toggleCallModal()">✖</div>
+  <a href="tel:0952281220">📱 095 228 1220</a>
+  <a href="tel:0970073990">📱 097 007 3990</a>
+</div>
+
+<script>
+function toggleReviews() {
+  const reviews = document.getElementById("reviews");
+  reviews.style.display = reviews.style.display === "none" ? "block" : "none";
+}
+
+async function loadReviews() {
+  const url = "https://docs.google.com/spreadsheets/d/e/2PACX-1vRcdyH4EsEsUTBMQgLrXGmKc3ma4tVKTVTvKGKA8h-_hWljV28Ugz-mGEo9pvwMJnkN5GCm1GSXQ9c7/pub?output=csv";
+  try {
+    const response = await fetch(url);
+    const text = await response.text();
+    const rows = text.trim().split("\n").slice(1);
+    const list = document.getElementById("review-list");
+    list.innerHTML = "";
+    rows.forEach((row) => {
+      const cells = row.split(",").map((cell) => cell.replace(/\"/g, "").trim());
+      const name = cells[1];
+      const message = cells[2];
+      const div = document.createElement("div");
+      div.className = "review";
+      div.innerHTML = `<p><strong>${name}</strong></p><p>${message}</p>`;
+      list.appendChild(div);
     });
-  </script>
+  } catch (error) {
+    document.getElementById("review-list").innerText = "Ошибка загрузки отзывов.";
+  }
+}
+window.onload = loadReviews;
+
+const galleryImages = document.querySelectorAll(".gallery img");
+const modal = document.getElementById("modal");
+const modalImg = document.getElementById("modal-img");
+const modalClose = document.getElementById("modal-close");
+const modalPrev = document.getElementById("modal-prev");
+const modalNext = document.getElementById("modal-next");
+let currentIndex = 0;
+
+function openModal(index) {
+  currentIndex = index;
+  modal.style.display = "flex";
+  modalImg.src = galleryImages[currentIndex].src;
+  modalImg.alt = galleryImages[currentIndex].alt;
+  document.body.style.overflow = "hidden";
+}
+function closeModal() {
+  modal.style.display = "none";
+  modalImg.src = "";
+  document.body.style.overflow = "";
+}
+function showPrev() {
+  currentIndex = (currentIndex - 1 + galleryImages.length) % galleryImages.length;
+  modalImg.src = galleryImages[currentIndex].src;
+  modalImg.alt = galleryImages[currentIndex].alt;
+}
+function showNext() {
+  currentIndex = (currentIndex + 1) % galleryImages.length;
+  modalImg.src = galleryImages[currentIndex].src;
+  modalImg.alt = galleryImages[currentIndex].alt;
+}
+galleryImages.forEach((img, index) => { img.addEventListener("click", () => openModal(index)); });
+modalClose.addEventListener("click", closeModal);
+modalPrev.addEventListener("click", showPrev);
+modalNext.addEventListener("click", showNext);
+modal.addEventListener("click", (e) => { if (e.target === modal) closeModal(); });
+document.addEventListener("keydown", (e) => {
+  if (modal.style.display === "flex") {
+    if (e.key === "Escape") closeModal();
+    else if (e.key === "ArrowLeft") showPrev();
+    else if (e.key === "ArrowRight") showNext();
+  }
+});
+
+function toggleCallModal() {
+  const modal = document.getElementById('callModal');
+  modal.style.display = modal.style.display === 'block' ? 'none' : 'block';
+}
+document.addEventListener('click', function(e) {
+  const modal = document.getElementById('callModal');
+  const button = document.querySelector('.floating-call');
+  if (!modal.contains(e.target) && !button.contains(e.target)) {
+    modal.style.display = 'none';
+  }
+});
+
+// Анимация подпрыгивания каждые 5 секунд
+setInterval(() => {
+  const btn = document.querySelector('.floating-call');
+  btn.style.animationPlayState = 'running';
+  setTimeout(() => {
+    btn.style.animationPlayState = 'paused';
+  }, 600);
+}, 5000);
+</script>
 
 </body>
 </html>
