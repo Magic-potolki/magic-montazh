@@ -16,39 +16,48 @@
       margin-bottom: 30px;
       text-align: center;
     }
-    table {
-      width: 100%;
-      border-collapse: collapse;
-      background-color: #fff;
+    /* Стили вкладок */
+    .tabs {
+      display: flex;
+      gap: 10px;
+      justify-content: center;
+      margin-bottom: 30px;
+      flex-wrap: wrap;
+    }
+    .tab-btn {
+      background-color: #e9ecef;
+      border: 2px solid #28a745;
+      color: #28a745;
+      padding: 10px 20px;
+      font-weight: bold;
       border-radius: 10px;
-      box-shadow: 0 2px 5px rgba(0,0,0,0.05);
-      overflow: hidden;
+      cursor: pointer;
+      transition: background-color 0.3s, color 0.3s;
+      user-select: none;
     }
-    th, td {
-      padding: 15px 20px;
-      border-bottom: 1px solid #ddd;
-      text-align: left;
-      font-size: 16px;
-    }
-    th {
+    .tab-btn:hover {
       background-color: #28a745;
       color: white;
-      font-weight: bold;
     }
-    tr:hover {
-      background-color: #f1f9f1;
+    .tab-btn.active {
+      background-color: #28a745;
+      color: white;
     }
-    a {
-      color: #28a745;
-      text-decoration: none;
+    /* Секции с контентом */
+    .tab-content {
+      background-color: #fff;
+      padding: 20px;
+      border-radius: 15px;
+      box-shadow: 0 2px 5px rgba(0,0,0,0.05);
+      max-width: 900px;
+      margin: 0 auto;
+      min-height: 200px;
+      color: #333;
     }
-    a:hover {
-      text-decoration: underline;
-    }
-    /* Ссылка назад */
+    /* Кнопка назад */
     #back-link {
       display: inline-block;
-      margin-top: 20px;
+      margin-top: 30px;
       color: #28a745;
       font-weight: bold;
       text-decoration: none;
@@ -66,9 +75,46 @@
 <body>
   <h1>Купить материалы и комплектующие</h1>
 
-  <!-- Здесь будет таблица с товарами и ценами -->
-  <p style="text-align: center; color: #555;">Здесь скоро появится каталог материалов и цены.</p>
+  <div class="tabs">
+    <button class="tab-btn active" data-tab="lighting">Освещение</button>
+    <button class="tab-btn" data-tab="grilyato">Грильято</button>
+    <button class="tab-btn" data-tab="armstrong">Армстронг</button>
+    <button class="tab-btn" data-tab="cube">Кубообразная рейка</button>
+  </div>
+
+  <div id="lighting" class="tab-content">
+    <p>Здесь будет таблица с материалами и ценами для освещения.</p>
+  </div>
+
+  <div id="grilyato" class="tab-content" style="display:none;">
+    <p>Здесь будет таблица с материалами и ценами для грильято.</p>
+  </div>
+
+  <div id="armstrong" class="tab-content" style="display:none;">
+    <p>Здесь будет таблица с материалами и ценами для армстронга.</p>
+  </div>
+
+  <div id="cube" class="tab-content" style="display:none;">
+    <p>Здесь будет таблица с материалами и ценами для кубообразной рейки.</p>
+  </div>
 
   <a id="back-link" href="index.html">← Вернуться на главную</a>
+
+  <script>
+    const tabButtons = document.querySelectorAll('.tab-btn');
+    const tabContents = document.querySelectorAll('.tab-content');
+
+    tabButtons.forEach(btn => {
+      btn.addEventListener('click', () => {
+        tabButtons.forEach(b => b.classList.remove('active'));
+        tabContents.forEach(c => c.style.display = 'none');
+
+        btn.classList.add('active');
+        const tabId = btn.getAttribute('data-tab');
+        document.getElementById(tabId).style.display = 'block';
+      });
+    });
+  </script>
 </body>
 </html>
+
