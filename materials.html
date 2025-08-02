@@ -1,120 +1,146 @@
 <!DOCTYPE html>
 <html lang="ru">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Купить материалы и комплектующие — Magic Потолки</title>
-  <style>
-    body {
-      font-family: Arial, sans-serif;
-      padding: 20px;
-      background: linear-gradient(to bottom, #f8f9fa, #e9ecef);
-      color: #333;
-    }
-    h1 {
-      color: #28a745;
-      margin-bottom: 30px;
-      text-align: center;
-    }
-    /* Стили вкладок */
-    .tabs {
-      display: flex;
-      gap: 10px;
-      justify-content: center;
-      margin-bottom: 30px;
-      flex-wrap: wrap;
-    }
-    .tab-btn {
-      background-color: #e9ecef;
-      border: 2px solid #28a745;
-      color: #28a745;
-      padding: 10px 20px;
-      font-weight: bold;
-      border-radius: 10px;
-      cursor: pointer;
-      transition: background-color 0.3s, color 0.3s;
-      user-select: none;
-    }
-    .tab-btn:hover {
-      background-color: #28a745;
-      color: white;
-    }
-    .tab-btn.active {
-      background-color: #28a745;
-      color: white;
-    }
-    /* Секции с контентом */
-    .tab-content {
-      background-color: #fff;
-      padding: 20px;
-      border-radius: 15px;
-      box-shadow: 0 2px 5px rgba(0,0,0,0.05);
-      max-width: 900px;
-      margin: 0 auto;
-      min-height: 200px;
-      color: #333;
-    }
-    /* Кнопка назад */
-    #back-link {
-      display: inline-block;
-      margin-top: 30px;
-      color: #28a745;
-      font-weight: bold;
-      text-decoration: none;
-      border: 2px solid #28a745;
-      padding: 8px 15px;
-      border-radius: 10px;
-      transition: background-color 0.3s ease, color 0.3s ease;
-    }
-    #back-link:hover {
-      background-color: #28a745;
-      color: white;
-    }
-  </style>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Материалы и цены</title>
+<style>
+  body {
+    font-family: Arial, sans-serif;
+    padding: 20px;
+  }
+  h1 {
+    text-align: center;
+    margin-bottom: 20px;
+  }
+  .tabs {
+    display: flex;
+    gap: 10px;
+    margin-bottom: 20px;
+    flex-wrap: wrap;
+  }
+  .tab-button {
+    padding: 10px 20px;
+    background: #4CAF50;
+    color: white;
+    border: none;
+    cursor: pointer;
+    border-radius: 5px;
+    transition: background-color 0.3s;
+  }
+  .tab-button:hover {
+    background-color: #45a049;
+  }
+  .tab-button.active {
+    background-color: #388e3c;
+  }
+  .tab-content {
+    display: none;
+  }
+  .tab-content.active {
+    display: block;
+  }
+  table {
+    width: 100%;
+    border-collapse: collapse;
+    font-size: 14px;
+  }
+  th, td {
+    border: 1px solid #ddd;
+    padding: 8px 6px;
+    text-align: left;
+  }
+  th {
+    background-color: #4CAF50;
+    color: white;
+  }
+  tbody tr:nth-child(even) {
+    background-color: #f9f9f9;
+  }
+</style>
 </head>
 <body>
-  <h1>Купить материалы и комплектующие</h1>
 
-  <div class="tabs">
-    <button class="tab-btn active" data-tab="lighting">Освещение</button>
-    <button class="tab-btn" data-tab="grilyato">Грильято</button>
-    <button class="tab-btn" data-tab="armstrong">Армстронг</button>
-    <button class="tab-btn" data-tab="cube">Кубообразная рейка</button>
-  </div>
+<h1>Материалы и цены</h1>
 
-  <div id="lighting" class="tab-content">
-    <p>Здесь будет таблица с материалами и ценами для освещения.</p>
-  </div>
+<div class="tabs">
+  <button class="tab-button active" data-tab="osveshchenie">Освещение</button>
+  <button class="tab-button" data-tab="grilyato">Грильято</button>
+  <button class="tab-button" data-tab="armstrong">Армстронг</button>
+  <button class="tab-button" data-tab="kuboobraznaya">Кубообразная рейка</button>
+</div>
 
-  <div id="grilyato" class="tab-content" style="display:none;">
-    <p>Здесь будет таблица с материалами и ценами для грильято.</p>
-  </div>
+<div id="osveshchenie" class="tab-content active">
+  <table>
+    <thead>
+      <tr>
+        <th>Товар</th>
+        <th>Цена (грн)</th>
+        <th>Ед. изм.</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr><td>KRAFT LED освітлення драйвер 18 Вт</td><td>452,15</td><td>шт</td></tr>
+      <tr><td>KRAFT LED освітлення драйвер 30 Вт</td><td>904,31</td><td>шт</td></tr>
+      <tr><td>KRAFT LED освітлення набір G 30 Вт S15 x 1200</td><td>1391,20</td><td>компл</td></tr>
+      <tr><td>KRAFT LED освітлення набір G 30 Вт S15 x 2*1200</td><td>2086,84</td><td>компл</td></tr>
+      <tr><td>KRAFT LED освітлення набір G 30 Вт S15 x 2*600</td><td>1391,20</td><td>компл</td></tr>
+      <tr><td>KRAFT LED освітлення набір G 30 Вт S15 x 4*300</td><td>1530,32</td><td>компл</td></tr>
+      <tr><td>KRAFT LED освітлення набір G 30 Вт S24 x 1200</td><td>1391,20</td><td>компл</td></tr>
+      <tr><td>KRAFT LED освітлення набір G 30 Вт S24 x 2*1200</td><td>2086,84</td><td>компл</td></tr>
+      <tr><td>KRAFT LED освітлення набір G 30 Вт S24 x 2*600</td><td>1391,20</td><td>компл</td></tr>
+      <tr><td>KRAFT LED освітлення набір K 18 Вт S35 x Н105 x 300 яч. ЗРАЗОК Золотий дуб 018</td><td>419,27</td><td>шт</td></tr>
+      <tr><td>KRAFT LED освітлення набір K 30 Вт S35 x Н105 x 1200 ANY RAL</td><td>2298,35</td><td>шт</td></tr>
+      <tr><td>KRAFT LED освітлення набір K 30 Вт S35 x Н105 x 1200 RAL 7024</td><td>1795,37</td><td>шт</td></tr>
+      <tr><td>KRAFT LED освітлення набір K 30 Вт S35 x Н105 x 1200 RAL 8017</td><td>1795,37</td><td>шт</td></tr>
+      <tr><td>KRAFT LED освітлення набір K 30 Вт S35 x Н105 x 1200 RAL 9003</td><td>1795,37</td><td>шт</td></tr>
+      <tr><td>KRAFT LED освітлення набір K 30 Вт S35 x Н105 x 1200 RAL 9005</td><td>1795,37</td><td>шт</td></tr>
+      <tr><td>KRAFT LED освітлення набір K 30 Вт S35 x Н105 x 1200 RAL 9006</td><td>1795,37</td><td>шт</td></tr>
+      <tr><td>KRAFT LED освітлення набір K 30 Вт S35 x Н105 x 1200 Дерево Антік</td><td>1795,37</td><td>шт</td></tr>
+      <tr><td>KRAFT LED освітлення набір K 30 Вт S35 x Н105 x 1200 Дерево Сонома</td><td>1795,37</td><td>шт</td></tr>
+      <tr><td>KRAFT LED освітлення набір K 30 Вт S35 x Н105 x 1200 Золотий дуб 018</td><td>1795,37</td><td>шт</td></tr>
+      <tr><td>KRAFT LED освітлення набір K 30 Вт S35 x Н105 x 1200 яч. 15мм RAL 9005</td><td>1795,37</td><td>шт</td></tr>
+      <tr><td>KRAFT LED освітлення набір K 30 Вт S35 x Н105 x 2*600 яч. 15мм RAL 9005</td><td>1728,97</td><td>шт</td></tr>
+      <tr><td>KRAFT LED освітлення набір K 30 Вт S35 x Н105 x 600 Золотий дуб 018</td><td>922,39</td><td>шт</td></tr>
+      <tr><td>KRAFT LED освітлення набір K 30 Вт S35 x Н35 x 1200 RAL 7024</td><td>1641,66</td><td>шт</td></tr>
+      <tr><td>KRAFT LED освітлення набір K 30 Вт S35 x Н35 x 1200 RAL 8017</td><td>1641,66</td><td>шт</td></tr>
+      <tr><td>KRAFT LED освітлення набір K 30 Вт S35 x Н35 x 1200 RAL 9003</td><td>1641,66</td><td>шт</td></tr>
+      <tr><td>KRAFT LED освітлення набір K 30 Вт S35 x Н35 x 1200 RAL 9005</td><td>1641,66</td><td>шт</td></tr>
+      <tr><td>KRAFT LED освітлення набір K 30 Вт S35 x Н35 x 1200 RAL 9006</td><td>1641,66</td><td>шт</td></tr>
+      <tr><td>KRAFT LED освітлення набір K 30 Вт S35 x Н35 x 1200 Дерево Антік</td><td>1641,66</td><td>шт</td></tr>
+      <tr><td>KRAFT LED освітлення набір K 30 Вт S35 x Н35 x 1200 Дерево Сонома</td><td>1641,66</td><td>шт</td></tr>
+      <tr><td>KRAFT LED освітлення набір K 30 Вт S35 x Н35 x 1200 Золотий дуб 018</td><td>1641,66</td><td>шт</td></tr>
+      <tr><td>KRAFT LED освітлення набір K 30 Вт S35 x Н35 x 1800 RAL 9005</td><td>2462,48</td><td>шт</td></tr>
+      <tr><td>KRAFT LED освітлення набір K 30 Вт S35 x Н35 x 1800 Дерево Антік</td><td>2462,48</td><td>шт</td></tr>
+      <!-- Продолжай добавлять остальные позиции здесь по тому же шаблону -->
+    </tbody>
+  </table>
+</div>
 
-  <div id="armstrong" class="tab-content" style="display:none;">
-    <p>Здесь будет таблица с материалами и ценами для армстронга.</p>
-  </div>
+<div id="grilyato" class="tab-content">
+  <p>Прайс лист по Грильято будет добавлен позже.</p>
+</div>
+<div id="armstrong" class="tab-content">
+  <p>Прайс лист по Армстронгу будет добавлен позже.</p>
+</div>
+<div id="kuboobraznaya" class="tab-content">
+  <p>Прайс лист по Кубообразной рейке будет добавлен позже.</p>
+</div>
 
-  <div id="cube" class="tab-content" style="display:none;">
-    <p>Здесь будет таблица с материалами и ценами для кубообразной рейки.</p>
-  </div>
+<script>
+  const buttons = document.querySelectorAll('.tab-button');
+  const contents = document.querySelectorAll('.tab-content');
 
-  <a id="back-link" href="index.html">← Вернуться на главную</a>
+  buttons.forEach(button => {
+    button.addEventListener('click', () => {
+      buttons.forEach(btn => btn.classList.remove('active'));
+      contents.forEach(content => content.classList.remove('active'));
 
-  <script>
-    const tabButtons = document.querySelectorAll('.tab-btn');
-    const tabContents = document.querySelectorAll('.tab-content');
-
-    tabButtons.forEach(btn => {
-      btn.addEventListener('click', () => {
-        tabButtons.forEach(b => b.classList.remove('active'));
-        tabContents.forEach(c => c.style.display = 'none');
-
-        btn.classList.add('active');
-        const tabId = btn.getAttribute('data-tab');
-        document.getElementById(tabId).style.display = 'block';
-      });
+      button.classList.add('active');
+      document.getElementById(button.dataset.tab).classList.add('active');
     });
-  </script>
+  });
+</script>
+
 </body>
 </html>
-
