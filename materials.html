@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1" />
-<title>Прайс-лист KRAFT LED освещение</title>
+<title>Материалы и комплектующие</title>
 <style>
   body {
     font-family: Arial, sans-serif;
@@ -11,9 +11,36 @@
     color: #333;
     padding: 20px;
   }
-  h2 {
-    color: #228B22; /* зелёный */
-    margin-bottom: 10px;
+  h1 {
+    color: #228B22;
+    margin-bottom: 20px;
+  }
+  .tabs {
+    margin-bottom: 15px;
+  }
+  .tabs button {
+    padding: 8px 16px;
+    margin-right: 8px;
+    border: 1px solid #228B22;
+    background: white;
+    color: #228B22;
+    cursor: pointer;
+    border-radius: 4px;
+    font-weight: bold;
+    transition: background-color 0.3s, color 0.3s;
+  }
+  .tabs button:hover {
+    background: #a3d9a5;
+  }
+  .tabs button.active {
+    background: #228B22;
+    color: white;
+  }
+  .content {
+    display: none;
+  }
+  .content.active {
+    display: block;
   }
   .table-container {
     max-height: 500px;
@@ -28,7 +55,7 @@
   }
   thead tr {
     background-color: #228B22;
-    color: #fff;
+    color: white;
     font-weight: bold;
   }
   th, td {
@@ -43,105 +70,150 @@
 </head>
 <body>
 
-<h2>Прайс-лист KRAFT LED освещение</h2>
-<div class="table-container">
-<table>
-  <thead>
-    <tr>
-      <th>Товар</th>
-      <th>Цена, грн</th>
-      <th>Ед. измерения</th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr><td>KRAFT LED освещение драйвер 18 Вт</td><td>452,15</td><td>шт</td></tr>
-    <tr><td>KRAFT LED освещение драйвер 30 Вт</td><td>904,31</td><td>шт</td></tr>
-    <tr><td>KRAFT LED освещение набор G 30 Вт S15 x 1200</td><td>1391,20</td><td>компл</td></tr>
-    <tr><td>KRAFT LED освещение набор G 30 Вт S15 x 2*1200</td><td>2086,84</td><td>компл</td></tr>
-    <tr><td>KRAFT LED освещение набор G 30 Вт S15 x 2*600</td><td>1391,20</td><td>компл</td></tr>
-    <tr><td>KRAFT LED освещение набор G 30 Вт S15 x 4*300</td><td>1530,32</td><td>компл</td></tr>
-    <tr><td>KRAFT LED освещение набор G 30 Вт S24 x 1200</td><td>1391,20</td><td>компл</td></tr>
-    <tr><td>KRAFT LED освещение набор G 30 Вт S24 x 2*1200</td><td>2086,84</td><td>компл</td></tr>
-    <tr><td>KRAFT LED освещение набор G 30 Вт S24 x 2*600</td><td>1391,20</td><td>компл</td></tr>
-    <tr><td>KRAFT LED освещение набор K 18 Вт S35 x Н105 x 300 яч. Золотой дуб 018</td><td>419,27</td><td>шт</td></tr>
-    <tr><td>KRAFT LED освещение набор K 30 Вт S35 x Н105 x 1200 ANY RAL</td><td>2298,35</td><td>шт</td></tr>
-    <tr><td>KRAFT LED освещение набор K 30 Вт S35 x Н105 x 1200 RAL 7024</td><td>1795,37</td><td>шт</td></tr>
-    <tr><td>KRAFT LED освещение набор K 30 Вт S35 x Н105 x 1200 RAL 8017</td><td>1795,37</td><td>шт</td></tr>
-    <tr><td>KRAFT LED освещение набор K 30 Вт S35 x Н105 x 1200 RAL 9003</td><td>1795,37</td><td>шт</td></tr>
-    <tr><td>KRAFT LED освещение набор K 30 Вт S35 x Н105 x 1200 RAL 9005</td><td>1795,37</td><td>шт</td></tr>
-    <tr><td>KRAFT LED освещение набор K 30 Вт S35 x Н105 x 1200 RAL 9006</td><td>1795,37</td><td>шт</td></tr>
-    <tr><td>KRAFT LED освещение набор K 30 Вт S35 x Н105 x 1200 Дерево Антик</td><td>1795,37</td><td>шт</td></tr>
-    <tr><td>KRAFT LED освещение набор K 30 Вт S35 x Н105 x 1200 Дерево Сонома</td><td>1795,37</td><td>шт</td></tr>
-    <tr><td>KRAFT LED освещение набор K 30 Вт S35 x Н105 x 1200 Золотой дуб 018</td><td>1795,37</td><td>шт</td></tr>
-    <tr><td>KRAFT LED освещение набор K 30 Вт S35 x Н105 x 1200 яч. 15мм RAL 9005</td><td>1795,37</td><td>шт</td></tr>
-    <tr><td>KRAFT LED освещение набор K 30 Вт S35 x Н105 x 2*600 яч. 15мм RAL 9005</td><td>1728,97</td><td>шт</td></tr>
-    <tr><td>KRAFT LED освещение набор K 30 Вт S35 x Н105 x 600 Золотой дуб 018</td><td>922,39</td><td>шт</td></tr>
-    <tr><td>KRAFT LED освещение набор K 30 Вт S35 x Н35 x 1200 RAL 7024</td><td>1641,66</td><td>шт</td></tr>
-    <tr><td>KRAFT LED освещение набор K 30 Вт S35 x Н35 x 1200 RAL 8017</td><td>1641,66</td><td>шт</td></tr>
-    <tr><td>KRAFT LED освещение набор K 30 Вт S35 x Н35 x 1200 RAL 9003</td><td>1641,66</td><td>шт</td></tr>
-    <tr><td>KRAFT LED освещение набор K 30 Вт S35 x Н35 x 1200 RAL 9005</td><td>1641,66</td><td>шт</td></tr>
-    <tr><td>KRAFT LED освещение набор K 30 Вт S35 x Н35 x 1200 RAL 9006</td><td>1641,66</td><td>шт</td></tr>
-    <tr><td>KRAFT LED освещение набор K 30 Вт S35 x Н35 x 1200 Дерево Антик</td><td>1641,66</td><td>шт</td></tr>
-    <tr><td>KRAFT LED освещение набор K 30 Вт S35 x Н35 x 1200 Дерево Сонома</td><td>1641,66</td><td>шт</td></tr>
-    <tr><td>KRAFT LED освещение набор K 30 Вт S35 x Н35 x 1200 Золотой дуб 018</td><td>1641,66</td><td>шт</td></tr>
-    <tr><td>KRAFT LED освещение набор K 30 Вт S35 x Н35 x 1800 RAL 9005</td><td>2462,48</td><td>шт</td></tr>
-    <tr><td>KRAFT LED освещение набор K 30 Вт S35 x Н35 x 1800 Дерево Антик</td><td>2462,48</td><td>шт</td></tr>
-    <tr><td>KRAFT LED освещение набор K 30 Вт S35 x Н45 x 1200 RAL 7024</td><td>1660,12</td><td>шт</td></tr>
-    <tr><td>KRAFT LED освещение набор K 30 Вт S35 x Н45 x 1200 RAL 8017</td><td>1660,12</td><td>шт</td></tr>
-    <tr><td>KRAFT LED освещение набор K 30 Вт S35 x Н45 x 1200 RAL 9003</td><td>1660,12</td><td>шт</td></tr>
-    <tr><td>KRAFT LED освещение набор K 30 Вт S35 x Н45 x 2400 RAL 8017</td><td>3320,22</td><td>шт</td></tr>
-    <tr><td>KRAFT LED освещение набор K 30 Вт S35 x Н55 x 1200 RAL 9005</td><td>1678,75</td><td>шт</td></tr>
-    <tr><td>KRAFT LED освещение набор K 30 Вт S35 x Н55 x 1200 Дерево Горіх Каріні 0047</td><td>1678,75</td><td>шт</td></tr>
-    <tr><td>KRAFT LED освещение набор K 30 Вт S35 x Н65 x 1200 ANY RAL</td><td>2029,25</td><td>шт</td></tr>
-    <tr><td>KRAFT LED освещение набор K 30 Вт S35 x Н65 x 1200 RAL 8017</td><td>1697,17</td><td>шт</td></tr>
-    <tr><td>KRAFT LED освещение набор K 30 Вт S35 x Н65 x 1200 RAL 9003</td><td>1697,17</td><td>шт</td></tr>
-    <tr><td>KRAFT LED освещение набор K 30 Вт S35 x Н65 x 1200 RAL 9005</td><td>1697,17</td><td>шт</td></tr>
-    <tr><td>KRAFT LED освещение набор K 30 Вт S35 x Н65 x 1200 RAL 9006</td><td>1697,17</td><td>шт</td></tr>
-    <tr><td>KRAFT LED освещение набор K 30 Вт S35 x Н65 x 1200 Дерево Антик</td><td>1697,17</td><td>шт</td></tr>
-    <tr><td>KRAFT LED освещение набор K 30 Вт S35 x Н65 x 1200 Дерево Сонома</td><td>1697,17</td><td>шт</td></tr>
-    <tr><td>KRAFT LED освещение набор K 30 Вт S35 x Н65 x 1200 Золотой дуб 018</td><td>1697,17</td><td>шт</td></tr>
-    <tr><td>KRAFT LED освещение набор K 30 Вт S35 x Н65 x 2*600 RAL 9003</td><td>1976,69</td><td>шт</td></tr>
-    <tr><td>KRAFT LED освещение набор K 30 Вт S35 x Н65 x 2*600 RAL 9006</td><td>1976,69</td><td>шт</td></tr>
-    <tr><td>KRAFT LED освещение набор K 30 Вт S35 x Н75 x 1200 RAL 8017</td><td>1715,64</td><td>шт</td></tr>
-    <tr><td>KRAFT LED освещение набор K 30 Вт S35 x Н75 x 1200 Дерево Сонома</td><td>1715,64</td><td>шт</td></tr>
-    <tr><td>KRAFT LED освещение набор K 30 Вт S35 x Н85 x 1200 RAL 9005</td><td>1728,78</td><td>шт</td></tr>
-    <tr><td>KRAFT LED освещение набор K 30 Вт S35 x Н85 x 1200 Дерево Сонома</td><td>1728,78</td><td>шт</td></tr>
-    <tr><td>KRAFT LED освещение набор K 30 Вт S35 x Н85 x 1200 Золотой дуб 018</td><td>1728,78</td><td>шт</td></tr>
-    <tr><td>KRAFT LED освещение набор K 30 Вт S35 x Н85 x 2*600 RAL 9005</td><td>1976,69</td><td>шт</td></tr>
-    <tr><td>KRAFT LED освещение набор K 30 Вт S35 x Н85 x 2225 RAL 9005</td><td>3424,00</td><td>шт</td></tr>
-    <tr><td>KRAFT LED освещение набор K 60 ВТ S35 x Н105 x 2225 яч. 15мм RAL 9005</td><td>3590,77</td><td>шт</td></tr>
-    <tr><td>KRAFT LED освещение набор K 60 ВТ S35 x Н105 x 2400 ANY RAL</td><td>4596,64</td><td>шт</td></tr>
-    <tr><td>KRAFT LED освещение набор K 60 ВТ S35 x Н105 x 2400 RAL 7024</td><td>3590,77</td><td>шт</td></tr>
-    <tr><td>KRAFT LED освещение набор K 60 ВТ S35 x Н105 x 2400 RAL 8017</td><td>3590,77</td><td>шт</td></tr>
-    <tr><td>KRAFT LED освещение набор K 60 ВТ S35 x Н105 x 2400 RAL 9003</td><td>3590,77</td><td>шт</td></tr>
-    <tr><td>KRAFT LED освещение набор K 60 ВТ S35 x Н105 x 2400 RAL 9005</td><td>3590,77</td><td>шт</td></tr>
-    <tr><td>KRAFT LED освещение набор K 60 ВТ S35 x Н105 x 2400 RAL 9006</td><td>3590,77</td><td>шт</td></tr>
-    <tr><td>KRAFT LED освещение набор K 60 ВТ S35 x Н105 x 2400 Дерево Антик</td><td>3590,77</td><td>шт</td></tr>
-    <tr><td>KRAFT LED освещение набор K 60 ВТ S35 x Н105 x 2400 Дерево Сонома</td><td>3590,77</td><td>шт</td></tr>
-    <tr><td>KRAFT LED освещение набор K 60 ВТ S35 x Н105 x 2400 Золотой дуб 018</td><td>3590,77</td><td>шт</td></tr>
-    <tr><td>KRAFT LED освещение набор K 60 ВТ S35 x Н105 x 3600 RAL 9003</td><td>3590,77</td><td>шт</td></tr>
-    <tr><td>KRAFT LED освещение набор K 60 ВТ S35 x Н45 x 3600 RAL 9005</td><td>5386,15</td><td>шт</td></tr>
-    <tr><td>KRAFT LED освещение набор K 60 ВТ S35 x Н65 x 2400 RAL 7024</td><td>3424,00</td><td>шт</td></tr>
-    <tr><td>KRAFT LED освещение набор K 60 ВТ S35 x Н65 x 2400 RAL 8017</td><td>3468,17</td><td>шт</td></tr>
-    <tr><td>KRAFT LED освещение набор K 60 ВТ S35 x Н65 x 2400 RAL 9006</td><td>3468,17</td><td>шт</td></tr>
-    <tr><td>KRAFT LED освещение набор K 60 ВТ S35 x Н75 x 2400 RAL 8017</td><td>3468,17</td><td>шт</td></tr>
-    <tr><td>KRAFT LED освещение набор K 60 ВТ S35 x Н85 x 2225 Дерево Сонома</td><td>3424,00</td><td>шт</td></tr>
-    <tr><td>KRAFT LED освещение набор K 90 Вт S35 x Н105 x 3485 яч. 15мм RAL 9005</td><td>3468,17</td><td>шт</td></tr>
-    <tr><td>KRAFT LED освещение набор T 30 Вт S15 x 1200</td><td>1391,20</td><td>компл</td></tr>
-    <tr><td>KRAFT LED освещение набор T 30 Вт S15 x 2*1200</td><td>2086,84</td><td>компл</td></tr>
-    <tr><td>KRAFT LED освещение набор T 30 Вт S15 x 2*600</td><td>1391,20</td><td>компл</td></tr>
-    <tr><td>KRAFT LED освещение набор T 30 Вт S24 x 1200</td><td>2086,84</td><td>компл</td></tr>
-    <tr><td>KRAFT LED освещение набор T 30 Вт S24 x 2*1200</td><td>1391,20</td><td>компл</td></tr>
-    <tr><td>KRAFT LED освещение набор T 30 Вт S24 x 2*600</td><td>1391,20</td><td>компл</td></tr>
-    <tr><td>KRAFT LED освещение набор T 90 Вт S24 x 3600</td><td>4173,61</td><td>компл</td></tr>
-    <tr><td>KRAFT LED освещение светильник G без драйвера S15 x 1200</td><td>922,39</td><td>шт</td></tr>
-    <tr><td>KRAFT LED освещение светильник G без драйвера S15 x 600</td><td>608,77</td><td>шт</td></tr>
-    <tr><td>KRAFT LED освещение светильник G без драйвера S24 x 1200</td><td>922,39</td><td>компл</td></tr>
-    <tr><td>KRAFT LED освещение светильник G без драйвера S24 x 600</td><td>608,77</td><td>компл</td></tr>
-    <tr><td>KRAFT LED освещение светильник T без драйвера S15 x 1200</td><td>1217,54</td><td>компл</td></tr>
-  </tbody>
-</table>
+<h1>Материалы и комплектующие</h1>
+
+<div class="tabs">
+  <button class="tab-btn active" data-tab="osveshchenie">Освещение</button>
+  <button class="tab-btn" data-tab="amstrong">Амстронг</button>
+  <button class="tab-btn" data-tab="grilyato">Грильято</button>
+  <button class="tab-btn" data-tab="kuboreznaya">Кубообразная рейка</button>
 </div>
+
+<div id="osveshchenie" class="content active">
+  <h2>Прайс-лист KRAFT LED освещение</h2>
+  <div class="table-container">
+    <table>
+      <thead>
+        <tr>
+          <th>Товар</th>
+          <th>Цена, грн</th>
+          <th>Ед. измерения</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr><td>KRAFT LED освещение драйвер 18 Вт</td><td>452,15</td><td>шт</td></tr>
+        <tr><td>KRAFT LED освещение драйвер 30 Вт</td><td>904,31</td><td>шт</td></tr>
+        <tr><td>KRAFT LED освещение набор G 30 Вт S15 x 1200</td><td>1391,20</td><td>компл</td></tr>
+        <tr><td>KRAFT LED освещение набор G 30 Вт S15 x 2*1200</td><td>2086,84</td><td>компл</td></tr>
+        <tr><td>KRAFT LED освещение набор G 30 Вт S15 x 2*600</td><td>1391,20</td><td>компл</td></tr>
+        <tr><td>KRAFT LED освещение набор G 30 Вт S15 x 4*300</td><td>1530,32</td><td>компл</td></tr>
+        <tr><td>KRAFT LED освещение набор G 30 Вт S24 x 1200</td><td>1391,20</td><td>компл</td></tr>
+        <tr><td>KRAFT LED освещение набор G 30 Вт S24 x 2*1200</td><td>2086,84</td><td>компл</td></tr>
+        <tr><td>KRAFT LED освещение набор G 30 Вт S24 x 2*600</td><td>1391,20</td><td>компл</td></tr>
+        <tr><td>KRAFT LED освещение набор K 18 Вт S35 x Н105 x 300 яч. Золотой дуб 018</td><td>419,27</td><td>шт</td></tr>
+        <tr><td>KRAFT LED освещение набор K 30 Вт S35 x Н105 x 1200 ANY RAL</td><td>2298,35</td><td>шт</td></tr>
+        <tr><td>KRAFT LED освещение набор K 30 Вт S35 x Н105 x 1200 RAL 7024</td><td>1795,37</td><td>шт</td></tr>
+        <tr><td>KRAFT LED освещение набор K 30 Вт S35 x Н105 x 1200 RAL 8017</td><td>1795,37</td><td>шт</td></tr>
+        <tr><td>KRAFT LED освещение набор K 30 Вт S35 x Н105 x 1200 RAL 9003</td><td>1795,37</td><td>шт</td></tr>
+        <tr><td>KRAFT LED освещение набор K 30 Вт S35 x Н105 x 1200 RAL 9005</td><td>1795,37</td><td>шт</td></tr>
+        <tr><td>KRAFT LED освещение набор K 30 Вт S35 x Н105 x 1200 RAL 9006</td><td>1795,37</td><td>шт</td></tr>
+        <tr><td>KRAFT LED освещение набор K 30 Вт S35 x Н105 x 1200 Дерево Антик</td><td>1795,37</td><td>шт</td></tr>
+        <tr><td>KRAFT LED освещение набор K 30 Вт S35 x Н105 x 1200 Дерево Сонома</td><td>1795,37</td><td>шт</td></tr>
+        <tr><td>KRAFT LED освещение набор K 30 Вт S35 x Н105 x 1200 Золотой дуб 018</td><td>1795,37</td><td>шт</td></tr>
+        <tr><td>KRAFT LED освещение набор K 30 Вт S35 x Н105 x 1200 яч. 15мм RAL 9005</td><td>1795,37</td><td>шт</td></tr>
+        <tr><td>KRAFT LED освещение набор K 30 Вт S35 x Н105 x 2*600 яч. 15мм RAL 9005</td><td>1728,97</td><td>шт</td></tr>
+        <tr><td>KRAFT LED освещение набор K 30 Вт S35 x Н105 x 600 Золотой дуб 018</td><td>922,39</td><td>шт</td></tr>
+        <tr><td>KRAFT LED освещение набор K 30 Вт S35 x Н35 x 1200 RAL 7024</td><td>1641,66</td><td>шт</td></tr>
+        <tr><td>KRAFT LED освещение набор K 30 Вт S35 x Н35 x 1200 RAL 8017</td><td>1641,66</td><td>шт</td></tr>
+        <tr><td>KRAFT LED освещение набор K 30 Вт S35 x Н35 x 1200 RAL 9003</td><td>1641,66</td><td>шт</td></tr>
+        <tr><td>KRAFT LED освещение набор K 30 Вт S35 x Н35 x 1200 RAL 9005</td><td>1641,66</td><td>шт</td></tr>
+        <tr><td>KRAFT LED освещение набор K 30 Вт S35 x Н35 x 1200 RAL 9006</td><td>1641,66</td><td>шт</td></tr>
+        <tr><td>KRAFT LED освещение набор K 30 Вт S35 x Н35 x 1200 Дерево Антик</td><td>1641,66</td><td>шт</td></tr>
+        <tr><td>KRAFT LED освещение набор K 30 Вт S35 x Н35 x 1200 Дерево Сонома</td><td>1641,66</td><td>шт</td></tr>
+        <tr><td>KRAFT LED освещение набор K 30 Вт S35 x Н35 x 1200 Золотой дуб 018</td><td>1641,66</td><td>шт</td></tr>
+        <tr><td>KRAFT LED освещение набор K 30 Вт S35 x Н35 x 1800 RAL 9005</td><td>2462,48</td><td>шт</td></tr>
+        <tr><td>KRAFT LED освещение набор K 30 Вт S35 x Н35 x 1800 Дерево Антик</td><td>2462,48</td><td>шт</td></tr>
+        <tr><td>KRAFT LED освещение набор K 30 Вт S35 x Н45 x 1200 RAL 7024</td><td>1660,12</td><td>шт</td></tr>
+        <tr><td>KRAFT LED освещение набор K 30 Вт S35 x Н45 x 1200 RAL 8017</td><td>1660,12</td><td>шт</td></tr>
+        <tr><td>KRAFT LED освещение набор K 30 Вт S35 x Н45 x 1200 RAL 9003</td><td>1660,12</td><td>шт</td></tr>
+        <tr><td>KRAFT LED освещение набор K 30 Вт S35 x Н45 x 2400 RAL 8017</td><td>3320,22</td><td>шт</td></tr>
+        <tr><td>KRAFT LED освещение набор K 30 Вт S35 x Н55 x 1200 RAL 9005</td><td>1678,75</td><td>шт</td></tr>
+        <tr><td>KRAFT LED освещение набор K 30 Вт S35 x Н55 x 1200 Дерево Горіх Каріні 0047</td><td>1678,75</td><td>шт</td></tr>
+        <tr><td>KRAFT LED освещение набор K 30 Вт S35 x Н65 x 1200 ANY RAL</td><td>2029,25</td><td>шт</td></tr>
+        <tr><td>KRAFT LED освещение набор K 30 Вт S35 x Н65 x 1200 RAL 8017</td><td>1697,17</td><td>шт</td></tr>
+        <tr><td>KRAFT LED освещение набор K 30 Вт S35 x Н65 x 1200 RAL 9003</td><td>1697,17</td><td>шт</td></tr>
+        <tr><td>KRAFT LED освещение набор K 30 Вт S35 x Н65 x 1200 RAL 9005</td><td>1697,17</td><td>шт</td></tr>
+        <tr><td>KRAFT LED освещение набор K 30 Вт S35 x Н65 x 1200 RAL 9006</td><td>1697,17</td><td>шт</td></tr>
+        <tr><td>KRAFT LED освещение набор K 30 Вт S35 x Н65 x 1200 Дерево Антик</td><td>1697,17</td><td>шт</td></tr>
+        <tr><td>KRAFT LED освещение набор K 30 Вт S35 x Н65 x 1200 Дерево Сонома</td><td>1697,17</td><td>шт</td></tr>
+        <tr><td>KRAFT LED освещение набор K 30 Вт S35 x Н65 x 1200 Золотой дуб 018</td><td>1697,17</td><td>шт</td></tr>
+        <tr><td>KRAFT LED освещение набор K 30 Вт S35 x Н65 x 2*600 RAL 9003</td><td>1976,69</td><td>шт</td></tr>
+        <tr><td>KRAFT LED освещение набор K 30 Вт S35 x Н65 x 2*600 RAL 9006</td><td>1976,69</td><td>шт</td></tr>
+        <tr><td>KRAFT LED освещение набор K 30 Вт S35 x Н75 x 1200 RAL 8017</td><td>1715,64</td><td>шт</td></tr>
+        <tr><td>KRAFT LED освещение набор K 30 Вт S35 x Н75 x 1200 Дерево Сонома</td><td>1715,64</td><td>шт</td></tr>
+        <tr><td>KRAFT LED освещение набор K 30 Вт S35 x Н85 x 1200 RAL 9005</td><td>1728,78</td><td>шт</td></tr>
+        <tr><td>KRAFT LED освещение набор K 30 Вт S35 x Н85 x 1200 Дерево Сонома</td><td>1728,78</td><td>шт</td></tr>
+        <tr><td>KRAFT LED освещение набор K 30 Вт S35 x Н85 x 1200 Золотой дуб 018</td><td>1728,78</td><td>шт</td></tr>
+        <tr><td>KRAFT LED освещение набор K 30 Вт S35 x Н85 x 2*600 RAL 9005</td><td>1976,69</td><td>шт</td></tr>
+        <tr><td>KRAFT LED освещение набор K 30 Вт S35 x Н85 x 2225 RAL 9005</td><td>3424,00</td><td>шт</td></tr>
+        <tr><td>KRAFT LED освещение набор K 60 ВТ S35 x Н105 x 2225 яч. 15мм RAL 9005</td><td>3590,77</td><td>шт</td></tr>
+        <tr><td>KRAFT LED освещение набор K 60 ВТ S35 x Н105 x 2400 ANY RAL</td><td>4596,64</td><td>шт</td></tr>
+        <tr><td>KRAFT LED освещение набор K 60 ВТ S35 x Н105 x 2400 RAL 7024</td><td>3590,77</td><td>шт</td></tr>
+        <tr><td>KRAFT LED освещение набор K 60 ВТ S35 x Н105 x 2400 RAL 8017</td><td>3590,77</td><td>шт</td></tr>
+        <tr><td>KRAFT LED освещение набор K 60 ВТ S35 x Н105 x 2400 RAL 9003</td><td>3590,77</td><td>шт</td></tr>
+        <tr><td>KRAFT LED освещение набор K 60 ВТ S35 x Н105 x 2400 RAL 9005</td><td>3590,77</td><td>шт</td></tr>
+        <tr><td>KRAFT LED освещение набор K 60 ВТ S35 x Н105 x 2400 RAL 9006</td><td>3590,77</td><td>шт</td></tr>
+        <tr><td>KRAFT LED освещение набор K 60 ВТ S35 x Н105 x 2400 Дерево Антик</td><td>3590,77</td><td>шт</td></tr>
+        <tr><td>KRAFT LED освещение набор K 60 ВТ S35 x Н105 x 2400 Дерево Сонома</td><td>3590,77</td><td>шт</td></tr>
+        <tr><td>KRAFT LED освещение набор K 60 ВТ S35 x Н105 x 2400 Золотой дуб 018</td><td>3590,77</td><td>шт</td></tr>
+        <tr><td>KRAFT LED освещение набор K 60 ВТ S35 x Н105 x 3600 RAL 9003</td><td>3590,77</td><td>шт</td></tr>
+        <tr><td>KRAFT LED освещение набор K 60 ВТ S35 x Н45 x 3600 RAL 9005</td><td>5386,15</td><td>шт</td></tr>
+        <tr><td>KRAFT LED освещение набор K 60 ВТ S35 x Н65 x 2400 RAL 7024</td><td>3424,00</td><td>шт</td></tr>
+        <tr><td>KRAFT LED освещение набор K 60 ВТ S35 x Н65 x 2400 RAL 8017</td><td>3468,17</td><td>шт</td></tr>
+        <tr><td>KRAFT LED освещение набор K 60 ВТ S35 x Н65 x 2400 RAL 9003</td><td>3468,17</td><td>шт</td></tr>
+        <tr><td>KRAFT LED освещение набор K 60 ВТ S35 x Н65 x 2400 RAL 9005</td><td>3468,17</td><td>шт</td></tr>
+        <tr><td>KRAFT LED освещение набор K 60 ВТ S35 x Н65 x 2400 Дерево Антик</td><td>3468,17</td><td>шт</td></tr>
+        <tr><td>KRAFT LED освещение набор K 60 ВТ S35 x Н65 x 2400 Дерево Сонома</td><td>3468,17</td><td>шт</td></tr>
+        <tr><td>KRAFT LED освещение набор K 60 ВТ S35 x Н65 x 2400 Золотой дуб 018</td><td>3468,17</td><td>шт</td></tr>
+        <tr><td>KRAFT LED освещение набор K 60 ВТ S35 x Н85 x 2400 RAL 7024</td><td>3468,17</td><td>шт</td></tr>
+        <tr><td>KRAFT LED освещение набор K 60 ВТ S35 x Н85 x 2400 RAL 8017</td><td>3468,17</td><td>шт</td></tr>
+        <tr><td>KRAFT LED освещение набор K 60 ВТ S35 x Н85 x 2400 RAL 9003</td><td>3468,17</td><td>шт</td></tr>
+        <tr><td>KRAFT LED освещение набор K 60 ВТ S35 x Н85 x 2400 RAL 9005</td><td>3468,17</td><td>шт</td></tr>
+        <tr><td>KRAFT LED освещение набор K 60 ВТ S35 x Н85 x 2400 Дерево Антик</td><td>3468,17</td><td>шт</td></tr>
+        <tr><td>KRAFT LED освещение набор K 60 ВТ S35 x Н85 x 2400 Дерево Сонома</td><td>3468,17</td><td>шт</td></tr>
+        <tr><td>KRAFT LED освещение набор K 60 ВТ S35 x Н85 x 2400 Золотой дуб 018</td><td>3468,17</td><td>шт</td></tr>
+        <tr><td>KRAFT LED освещение драйвер 18 Вт</td><td>452,15</td><td>шт</td></tr>
+        <tr><td>KRAFT LED освещение драйвер 30 Вт</td><td>904,31</td><td>шт</td></tr>
+      </tbody>
+    </table>
+  </div>
+</div>
+
+<div id="amstrong" class="content">
+  <h2>Амстронг</h2>
+  <p>Контент для Амстронга пока пустой.</p>
+</div>
+
+<div id="grilyato" class="content">
+  <h2>Грильято</h2>
+  <p>Контент для Грильято пока пустой.</p>
+</div>
+
+<div id="kuboreznaya" class="content">
+  <h2>Кубообразная рейка</h2>
+  <p>Контент для Кубообразной рейки пока пустой.</p>
+</div>
+
+<script>
+  const tabs = document.querySelectorAll('.tab-btn');
+  const contents = document.querySelectorAll('.content');
+
+  tabs.forEach(tab => {
+    tab.addEventListener('click', () => {
+      tabs.forEach(t => t.classList.remove('active'));
+      tab.classList.add('active');
+
+      const tabId = tab.getAttribute('data-tab');
+      contents.forEach(c => {
+        if (c.id === tabId) {
+          c.classList.add('active');
+        } else {
+          c.classList.remove('active');
+        }
+      });
+    });
+  });
+</script>
 
 </body>
 </html>
