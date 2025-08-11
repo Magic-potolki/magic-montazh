@@ -3,234 +3,94 @@
 <head>
 <meta charset="UTF-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1" />
-<title>Прайсы</title>
+<title>Материалы и комплектующие</title>
 <style>
   body {
     font-family: Arial, sans-serif;
+    background: #fff;
+    color: #333;
     padding: 20px;
   }
-  .tabs {
+  h1 {
+    color: #228B22;
     margin-bottom: 20px;
   }
-  .tab-btn {
-    background-color: #eee;
-    border: 1px solid #ccc;
-    padding: 10px 15px;
-    cursor: pointer;
-    margin-right: 5px;
-    border-bottom: none;
-    font-weight: bold;
+  .tabs {
+    margin-bottom: 15px;
   }
-  .tab-btn.active {
-    background-color: #fff;
-    border-color: #444;
-    border-bottom: 2px solid white;
+  .tabs button {
+    padding: 8px 16px;
+    margin-right: 8px;
+    border: 1px solid #228B22;
+    background: white;
+    color: #228B22;
+    cursor: pointer;
+    border-radius: 4px;
+    font-weight: bold;
+    transition: background-color 0.3s, color 0.3s;
+  }
+  .tabs button:hover {
+    background: #a3d9a5;
+  }
+  .tabs button.active {
+    background: #228B22;
+    color: white;
   }
   .content {
     display: none;
-    border: 1px solid #444;
-    padding: 15px;
   }
   .content.active {
     display: block;
   }
-  .content h2 {
-    font-size: 1.5em;
-    margin-bottom: 15px;
-    border-bottom: 2px solid #444;
-    padding-bottom: 5px;
+  .table-container {
+    max-height: 500px;
+    overflow-y: auto;
+    border: 1px solid #ccc;
+    border-radius: 6px;
   }
-  table.price-table {
-    width: 100%;
+  table {
     border-collapse: collapse;
+    width: 100%;
+    min-width: 600px;
   }
-  table.price-table th,
-  table.price-table td {
-    border: 1px solid #aaa;
-    padding: 8px 12px;
-    text-align: left;
-  }
-  table.price-table thead th {
-    background-color: #f2f2f2;
+  thead tr {
+    background-color: #228B22;
+    color: white;
     font-weight: bold;
   }
-  table.price-table tbody tr:nth-child(even) {
-    background-color: #fafafa;
+  th, td {
+    padding: 8px 12px;
+    border: 1px solid #ddd;
+    text-align: left;
+  }
+  tbody tr:nth-child(even) {
+    background-color: #f9f9f9;
   }
 </style>
 </head>
 <body>
 
-<div class="tabs">
-  <button class="tab-btn active" data-tab="grilyato">Грильято</button>
-  <button class="tab-btn" data-tab="kuboreznaya">Кубообразная рейка</button>
-</div>
-
-<div id="grilyato" class="content active">
-  <h2>Грильято</h2>
-  <table class="price-table">
-    <thead>
-      <tr>
-        <th>Наименование</th>
-        <th>Цена</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr><td>KRAFT Профіль Грильято GLK15 "М" S15 x Н40 x 600 яч. 100 ANY RAL</td><td>30,36 шт</td></tr>
-      <tr><td>KRAFT Профіль Грильято GLK15 "М" S15 x Н40 x 600 яч. 100 RAL 7024</td><td>16,72 шт</td></tr>
-      <!-- остальные строки ... -->
-    </tbody>
-  </table>
-</div>
-
-<div id="kuboreznaya" class="content">
-  <h2>Кубообразная рейка</h2>
-  <table class="price-table">
-    <thead>
-      <tr>
-        <th>Наименование</th>
-        <th>Цена</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr><td>KRAFT Рейка Кубоподібна "Готове рішення" (5+м.кв) S35 x Н35 x 2000 RAL 7024</td><td>10481,17 пог.м</td></tr>
-      <tr><td>KRAFT Рейка Кубоподібна S35 x Н105 ANY RAL</td><td>246,79 пог.м</td></tr>
-      <!-- остальные строки ... -->
-    </tbody>
-  </table>
-</div>
-
-<script>
-  const tabs = document.querySelectorAll('.tab-btn');
-  const contents = document.querySelectorAll('.content');
-
-  tabs.forEach(tab => {
-    tab.addEventListener('click', () => {
-      // Снимаем active со всех кнопок и контента
-      tabs.forEach(t => t.classList.remove('active'));
-      contents.forEach(c => c.classList.remove('active'));
-
-      // Добавляем active к нажатой кнопке и соответствующему контенту
-      tab.classList.add('active');
-      const tabId = tab.getAttribute('data-tab');
-      document.getElementById(tabId).classList.add('active');
-    });
-  });
-</script>
-
-</body>
-</html>
-Что сделано:
-В секции с кнопками .tab-btn для каждого таба выставлен правильный data-tab, совпадающий с id контент-блока.
-
-По умолчанию только таб «Грильято» и его содержимое активны (class="active").
-
-В JS при клике убираются .active у всех табов и содержимого, и добавляются только к выбранным.
-
-Стили display: none / display: block управляются классом .active.
-
-Теперь при клике на кнопку "Кубообразная рейка" будет показываться только её таблица без «Грильято».
-Если хочешь, могу помочь подставить полный твой прайс в этот шаблон.
-
-Напиши, если нужно!
-
-
-
-
-
-
-
-
-Вы сказали:
-да,только с прайсами на освещение,грильято,амстрог,куббобразная рейка,подготовь готовый код,только весь,и полный
-
-
-ChatGPT сказал:
-Понял! Сейчас соберу полный рабочий HTML-код с 4 табами и их полными прайсами (Освещение, Грильято, Амстронг, Кубообразная рейка), с корректным переключением между вкладками. Вставлю твои данные в каждую таблицу.
-
-html
-Копировать
-Редактировать
-<!DOCTYPE html>
-<html lang="ru">
-<head>
-<meta charset="UTF-8" />
-<meta name="viewport" content="width=device-width, initial-scale=1" />
-<title>Прайсы</title>
-<style>
-  body {
-    font-family: Arial, sans-serif;
-    padding: 20px;
-  }
-  .tabs {
-    margin-bottom: 20px;
-  }
-  .tab-btn {
-    background-color: #eee;
-    border: 1px solid #ccc;
-    padding: 10px 15px;
-    cursor: pointer;
-    margin-right: 5px;
-    border-bottom: none;
-    font-weight: bold;
-    border-radius: 4px 4px 0 0;
-  }
-  .tab-btn.active {
-    background-color: #fff;
-    border-color: #444;
-    border-bottom: 2px solid white;
-  }
-  .content {
-    display: none;
-    border: 1px solid #444;
-    padding: 15px;
-    border-radius: 0 4px 4px 4px;
-  }
-  .content.active {
-    display: block;
-  }
-  .content h2 {
-    font-size: 1.5em;
-    margin-bottom: 15px;
-    border-bottom: 2px solid #444;
-    padding-bottom: 5px;
-  }
-  table.price-table {
-    width: 100%;
-    border-collapse: collapse;
-  }
-  table.price-table th,
-  table.price-table td {
-    border: 1px solid #aaa;
-    padding: 8px 12px;
-    text-align: left;
-  }
-  table.price-table thead th {
-    background-color: #f2f2f2;
-    font-weight: bold;
-  }
-  table.price-table tbody tr:nth-child(even) {
-    background-color: #fafafa;
-  }
-</style>
-</head>
-<body>
+<h1>Материалы и комплектующие</h1>
 
 <div class="tabs">
   <button class="tab-btn active" data-tab="osveshchenie">Освещение</button>
-  <button class="tab-btn" data-tab="grilyato">Грильято</button>
   <button class="tab-btn" data-tab="amstrong">Амстронг</button>
+  <button class="tab-btn" data-tab="grilyato">Грильято</button>
   <button class="tab-btn" data-tab="kuboreznaya">Кубообразная рейка</button>
 </div>
 
-<!-- Освещение -->
 <div id="osveshchenie" class="content active">
-  <h2>Освещение</h2>
-  <table class="price-table">
-    <thead>
-      <tr><th>Наименование</th><th>Цена</th></tr>
-    </thead>
-    <tbody>
+  <h2>Прайс-лист KRAFT LED освещение</h2>
+  <div class="table-container">
+    <table>
+      <thead>
+        <tr>
+          <th>Товар</th>
+          <th>Цена, грн</th>
+          <th>Ед. измерения</th>
+        </tr>
+      </thead>
+      <tbody>
         <tr><td>KRAFT LED освещение драйвер 18 Вт</td><td>452,15</td><td>шт</td></tr>
         <tr><td>KRAFT LED освещение драйвер 30 Вт</td><td>904,31</td><td>шт</td></tr>
         <tr><td>KRAFT LED освещение набор G 30 Вт S15 x 1200</td><td>1391,20</td><td>компл</td></tr>
@@ -319,12 +179,17 @@ html
   </div>
 </div>
 <div id="amstrong" class="content">
-  <h2>Амстронг</h2>
-  <table class="price-table">
-    <thead>
-      <tr><th>Наименование</th><th>Цена</th></tr>
-    </thead>
-    <tbody>
+  <h2>Прайс-лист KRAFT Амстронг</h2>
+  <div class="table-container">
+    <table>
+      <thead>
+        <tr>
+          <th>Товар</th>
+          <th>Цена, грн</th>
+          <th>Ед. измерения</th>
+        </tr>
+      </thead>
+      <tbody>
         <tr><td>KRAFT Плита стельова WoodAcoustic Edge S600 x Н10 x 1200 яч. 45</td><td>698,78</td><td>шт</td></tr>
         <tr><td>KRAFT Плита стельова WoodAcoustic Edge S600 x Н10 x 600 яч. 45</td><td>698,78</td><td>шт</td></tr>
         <tr><td>KRAFT Плита стельова WoodAcoustic Regular S600 x Н10 x 1200</td><td>698,78</td><td>шт</td></tr>
@@ -415,9 +280,12 @@ html
 
 <div id="grilyato" class="content">
   <h2>Грильято</h2>
-  <table class="price-table">
+  <table>
     <thead>
-      <tr><th>Наименование</th><th>Цена</th></tr>
+      <tr>
+        <th>Наименование</th>
+        <th>Цена</th>
+      </tr>
     </thead>
     <tbody>
       <tr><td>KRAFT Профіль Грильято GLK15 "М" S15 x Н40 x 600 яч. 100 ANY RAL</td><td>30,36 шт</td></tr>
@@ -482,7 +350,10 @@ html
   <h2>Кубообразная рейка</h2>
   <table class="price-table">
     <thead>
-      <tr><th>Наименование</th><th>Цена</th></tr>
+      <tr>
+        <th>Наименование</th>
+        <th>Цена</th>
+      </tr>
     </thead>
     <tbody>
       <tr><td>KRAFT Рейка Кубоподібна "Готове рішення" (5+м.кв) S35 x Н35 x 2000 RAL 7024</td><td>10481,17 пог.м</td></tr>
