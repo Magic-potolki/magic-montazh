@@ -3,94 +3,63 @@
 <head>
 <meta charset="UTF-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1" />
-<title>Материалы и комплектующие</title>
+<title>Прайс KRAFT</title>
 <style>
   body {
     font-family: Arial, sans-serif;
-    background: #fff;
-    color: #333;
     padding: 20px;
   }
-  h1 {
-    color: #228B22;
+  .buttons {
     margin-bottom: 20px;
   }
-  .tabs {
-    margin-bottom: 15px;
-  }
-  .tabs button {
-    padding: 8px 16px;
-    margin-right: 8px;
-    border: 1px solid #228B22;
-    background: white;
-    color: #228B22;
+  .btn {
+    padding: 10px 20px;
+    margin-right: 10px;
     cursor: pointer;
+    background-color: #0077cc;
+    color: white;
+    border: none;
     border-radius: 4px;
-    font-weight: bold;
-    transition: background-color 0.3s, color 0.3s;
   }
-  .tabs button:hover {
-    background: #a3d9a5;
+  .btn.active {
+    background-color: #005fa3;
   }
-  .tabs button.active {
-    background: #228B22;
-    color: white;
-  }
-  .content {
-    display: none;
-  }
-  .content.active {
-    display: block;
-  }
-  .table-container {
-    max-height: 500px;
-    overflow-y: auto;
-    border: 1px solid #ccc;
-    border-radius: 6px;
-  }
-  table {
-    border-collapse: collapse;
+  .price-table {
     width: 100%;
-    min-width: 600px;
+    border-collapse: collapse;
+    margin-top: 10px;
   }
-  thead tr {
-    background-color: #228B22;
-    color: white;
-    font-weight: bold;
-  }
-  th, td {
-    padding: 8px 12px;
+  .price-table th, .price-table td {
     border: 1px solid #ddd;
+    padding: 8px;
+  }
+  .price-table th {
+    background-color: #f4f4f4;
     text-align: left;
   }
-  tbody tr:nth-child(even) {
-    background-color: #f9f9f9;
+  .price-container {
+    display: none;
+  }
+  .price-container.active {
+    display: block;
   }
 </style>
 </head>
 <body>
 
-<h1>Материалы и комплектующие</h1>
-
-<div class="tabs">
-  <button class="tab-btn active" data-tab="osveshchenie">Освещение</button>
-  <button class="tab-btn" data-tab="amstrong">Амстронг</button>
-  <button class="tab-btn" data-tab="grilyato">Грильято</button>
-  <button class="tab-btn" data-tab="kuboreznaya">Кубообразная рейка</button>
+<div class="buttons">
+  <button class="btn active" data-target="osveshchenie">Освещение</button>
+  <button class="btn" data-target="amstrong">Амстронг</button>
+  <button class="btn" data-target="grilyato">Грильято</button>
+  <button class="btn" data-target="kuboreika">Кубообразная рейка</button>
 </div>
 
-<div id="osveshchenie" class="content active">
-  <h2>Прайс-лист KRAFT LED освещение</h2>
-  <div class="table-container">
-    <table>
-      <thead>
-        <tr>
-          <th>Товар</th>
-          <th>Цена, грн</th>
-          <th>Ед. измерения</th>
-        </tr>
-      </thead>
-      <tbody>
+<div id="osveshchenie" class="price-container active">
+  <table class="price-table">
+    <thead>
+      <tr><th>Прайс</th></tr>
+    </thead>
+    <tbody>
         <tr><td>KRAFT LED освещение драйвер 18 Вт</td><td>452,15</td><td>шт</td></tr>
         <tr><td>KRAFT LED освещение драйвер 30 Вт</td><td>904,31</td><td>шт</td></tr>
         <tr><td>KRAFT LED освещение набор G 30 Вт S15 x 1200</td><td>1391,20</td><td>компл</td></tr>
@@ -174,22 +143,15 @@
         <tr><td>KRAFT LED освещение набор K 60 ВТ S35 x Н85 x 2400 Золотой дуб 018</td><td>3468,17</td><td>шт</td></tr>
         <tr><td>KRAFT LED освещение драйвер 18 Вт</td><td>452,15</td><td>шт</td></tr>
         <tr><td>KRAFT LED освещение драйвер 30 Вт</td><td>904,31</td><td>шт</td></tr>
-      </tbody>
-    </table>
-  </div>
+     </tbody>
+  </table>
 </div>
-<div id="amstrong" class="content">
-  <h2>Прайс-лист KRAFT Амстронг</h2>
-  <div class="table-container">
-    <table>
-      <thead>
-        <tr>
-          <th>Товар</th>
-          <th>Цена, грн</th>
-          <th>Ед. измерения</th>
-        </tr>
-      </thead>
-      <tbody>
+<div id="amstrong" class="price-container">
+  <table class="price-table">
+    <thead>
+      <tr><th>Прайс</th></tr>
+    </thead>
+    <tbody>
         <tr><td>KRAFT Плита стельова WoodAcoustic Edge S600 x Н10 x 1200 яч. 45</td><td>698,78</td><td>шт</td></tr>
         <tr><td>KRAFT Плита стельова WoodAcoustic Edge S600 x Н10 x 600 яч. 45</td><td>698,78</td><td>шт</td></tr>
         <tr><td>KRAFT Плита стельова WoodAcoustic Regular S600 x Н10 x 1200</td><td>698,78</td><td>шт</td></tr>
@@ -273,19 +235,13 @@
         <tr><td>KRAFT Профіль Nova T24 S24 x Н25 x 600 RAL 9003</td><td>12,11</td><td>шт</td></tr>
         <tr><td>KRAFT Профіль Nova T24 S24 x Н38 x 3600 RAL 9003</td><td>78,44</td><td>шт</td></tr>
         <tr><td>KRAFT Профіль Nova Пристінний L S24 x Н19 x 3000 RAL 9003</td><td>44,72</td><td>шт</td></tr>
-      </tbody>
-    </table>
-  </div>
-</div
-
-<div id="grilyato" class="content">
-  <h2>Грильято</h2>
-  <table>
+       </tbody>
+  </table>
+</div>
+<div id="grilyato" class="price-container">
+  <table class="price-table">
     <thead>
-      <tr>
-        <th>Наименование</th>
-        <th>Цена</th>
-      </tr>
+      <tr><th>Прайс</th></tr>
     </thead>
     <tbody>
       <tr><td>KRAFT Профіль Грильято GLK15 "М" S15 x Н40 x 600 яч. 100 ANY RAL</td><td>30,36 шт</td></tr>
@@ -345,15 +301,10 @@
     </tbody>
   </table>
 </div>
-
-<div id="kuboreznaya" class="content">
-  <h2>Кубообразная рейка</h2>
+<div id="kuboreika" class="price-container">
   <table class="price-table">
     <thead>
-      <tr>
-        <th>Наименование</th>
-        <th>Цена</th>
-      </tr>
+      <tr><th>Прайс</th></tr>
     </thead>
     <tbody>
       <tr><td>KRAFT Рейка Кубоподібна "Готове рішення" (5+м.кв) S35 x Н35 x 2000 RAL 7024</td><td>10481,17 пог.м</td></tr>
@@ -458,54 +409,20 @@
     </tbody>
   </table>
 </div>
-
-<style>
-  .content {
-    margin: 20px 0;
-    font-family: Arial, sans-serif;
-  }
-  .content h2 {
-    font-size: 1.5em;
-    margin-bottom: 15px;
-    border-bottom: 2px solid #444;
-    padding-bottom: 5px;
-  }
-  table.price-table {
-    width: 100%;
-    border-collapse: collapse;
-  }
-  table.price-table th,
-  table.price-table td {
-    border: 1px solid #aaa;
-    padding: 8px 12px;
-    text-align: left;
-  }
-  table.price-table thead th {
-    background-color: #f2f2f2;
-    font-weight: bold;
-  }
-  table.price-table tbody tr:nth-child(even) {
-    background-color: #fafafa;
-  }
-</style>
-
 <script>
-  const tabs = document.querySelectorAll('.tab-btn');
-  const contents = document.querySelectorAll('.content');
+  const buttons = document.querySelectorAll('.btn');
+  const containers = document.querySelectorAll('.price-container');
 
-  tabs.forEach(tab => {
-    tab.addEventListener('click', () => {
-      tabs.forEach(t => t.classList.remove('active'));
-      tab.classList.add('active');
+  buttons.forEach(button => {
+    button.addEventListener('click', () => {
+      // Убираем активный класс у всех кнопок и контейнеров
+      buttons.forEach(btn => btn.classList.remove('active'));
+      containers.forEach(c => c.classList.remove('active'));
 
-      const tabId = tab.getAttribute('data-tab');
-      contents.forEach(c => {
-        if (c.id === tabId) {
-          c.classList.add('active');
-        } else {
-          c.classList.remove('active');
-        }
-      });
+      // Добавляем активный класс на нажатую кнопку и соответствующий контейнер
+      button.classList.add('active');
+      const target = button.getAttribute('data-target');
+      document.getElementById(target).classList.add('active');
     });
   });
 </script>
